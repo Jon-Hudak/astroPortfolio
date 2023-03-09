@@ -1,35 +1,113 @@
 ---
-export interface Props {
-	title: string;
-}
+import "../styles/global.css"
+import { Icon } from 'astro-icon'
+import Navbar from "../components/Navbar.astro";
 
-const { title } = Astro.props;
+let showToTop = false;
+// let lastYPos = 0;
+let navbarChange = false;
+
+const { title, footerClass, background } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+	<main>
+		<div id="top"
+		class={`overflow-hidden flex min-h-screen flex-col layout ${background}`}
+	  >
+		<Navbar navbarChange={false}/>
+		<div class="flex-1 grow mt-24 ">
+		  <div class=""><slot/></div>
+		</div>
+		  <div
+			class="bg-blue-500 h-16 w-16 fixed bottom-16 right-16 rounded-full cursor-pointer shadow-2xl z-50"
+		  >
+			<a title="Top of Page" href="#top" class="flex text-center p-auto">
+			  <div class="m-auto p-4 w-full text-4xl font-bold font-sans -rotate-90">
+				<Icon name="arrow"/>
+			  </div>
+			</a>
+		  </div>
+  
+		<footer
+		  class={`min-h-20 flex flex-col border-t-2 border-gray-600 bg-offBlack mt-3 z-40 ${footerClass}`}
+		>
+		  
+		  <p class="text-right mt-auto px-3 py-3 text-white">
+			Copyright 2023 Jon Hudak Development
+		  </p>
+		</footer>
+	  </div>
+</main>
+  </body>
 </html>
+
+<script>
+  const scrollY = window.addEventListener("scroll", handleScroll);
+  function handleScroll() {
+    console.log(scrollY);
+  }
+</script>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
+	   @apply bg-dark-gray;
+	 }
+	 .inputField {
+	   @apply text-black px-3 py-2 mt-3 text-xl w-full bg-blue-50 focus:bg-blue-200 border-2 border-blue-500 outline-double outline-4 outline-neutral-700 rounded-2xl;
+	 }
+	 .formLabel {
+	   @apply text-2xl py-2;
+	 }
+	 .h2 {
+	   @apply my-5 mx-5 font-bold font-title text-2xl sm:text-3xl text-white after:absolute text-red-500;
+	 }
+	 .cont {
+	   @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;
+	 }
+	 p {
+	   @apply text-white/60;
+	 }
+	 .type,
+	 .notype {
+	   @apply relative font-title;
+	 }
+	 .type::after {
+	   @apply absolute;
+	 }
+	 .button {
+	   @apply font-black font-mono text-lg sm:text-2xl rounded-full shadow-lg bg-accent-blue border border-neutral-400 text-gray-900 hover:bg-sky-700 hover:text-gray-300 active:bg-sky-900 focus:outline-none focus:ring focus:ring-sky-500;
+	 }
+	 .quotebox p {
+	   @apply leading-snug mt-3 font-thin;
+	 }
+	 .quotebox strong {
+	   @apply font-semibold text-white;
+	 }
+   
+	 .quotebox :first-child {
+	   @apply mt-0;
+	 }
+	 #hamburgerLinks a {
+	   @apply block py-10 px-5 hover:bg-gray-800  text-5xl font-sans font-thin text-right w-full h-full;
+	 }
+	 
+   
+	 .imgShadow-sm {
+	   -webkit-filter: drop-shadow(1px 1px 1px #43b0ff);
+   
+	   filter: drop-shadow(0px 0px 4px #43b0ff);
+	 }
+	 .svg-shadow {
+	   -webkit-filter: drop-shadow(1px 1px 1px black);
+	   filter: drop-shadow(-1px 2px 3px black);
+	 }
+   </style>
