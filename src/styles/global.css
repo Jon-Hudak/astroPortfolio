@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Aldrich&display=swap");
 
+/* variables */
+:root{
+  --small: 640px;
+  --medium: 768px;
+  --large: 1024px;
+  --xlarge: 1280px;
+  --xxlarge: 1536px
+}
+
+
+
 .line {
   fill: none;
   stroke: black;

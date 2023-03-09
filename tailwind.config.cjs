@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        title: ["'Aldrich', cursive"],
+        title: ["'Aldrich', sans-serif"],
       },
       colors: {
         "dark-gray": "#191919",
@@ -23,9 +23,15 @@ module.exports = {
           "80%": { transform: "scaleY(110%)" },
           "100%": { transform: "scaleY(100%)" },
         },
+        imgSlide: {
+          "0%": {opacity:0, transform: "translate(50%)"},
+          "100%": {opacity:1, transform: "translate(0)"}
+        }
+       
       },
       animation: {
         menuOpen: "menuAnim 0.3s ease-in-out forwards",
+        hero: "imgSlide 2s ease-out-forwards"
       },
     },
   },
