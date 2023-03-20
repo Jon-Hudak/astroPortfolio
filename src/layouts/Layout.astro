@@ -19,36 +19,31 @@ const { title, footerClass, background } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body id="top" class={`overflow-x-hidden flex min-h-screen flex-col layout ${background}`}>
-    
-      
-        <Navbar navbarChange={false} />
-        <main class="flex flex-col flex-1 grow mt-36 place-items-center">
-          
-            <slot />
-          
-        </main>
-        <div
-          class="bg-blue-500 h-16 w-16 fixed bottom-16 right-16 rounded-full cursor-pointer shadow-2xl z-40"
-        >
-          <a title="Top of Page" href="#top" class="flex text-center p-auto">
-            <div
-              class="m-auto p-4 w-full text-4xl font-bold font-sans -rotate-90"
-            >
-              <Icon name="arrow" />
-            </div>
-          </a>
+  <body
+    id="top"
+    class={`overflow-x-hidden flex min-h-screen flex-col layout ${background}`}
+  >
+    <Navbar navbarChange={false} />
+    <main class="flex flex-col flex-1 grow place-items-center w-screen">
+      <slot />
+    </main>
+    <nav
+      class="bg-blue-500 h-16 w-16 fixed bottom-16 right-16 rounded-full cursor-pointer shadow-2xl z-40"
+    >
+      <a title="Top of Page" href="#top" class="flex text-center p-auto">
+        <div class="m-auto p-4 w-full text-4xl font-bold font-sans -rotate-90">
+          <Icon name="arrow" />
         </div>
+      </a>
+    </nav>
 
-        <footer
-          class={`min-h-20 flex flex-col border-t-2 border-gray-600 bg-offBlack mt-3 z-40 ${footerClass}`}
-        >
-          <p class="text-right mt-auto px-3 py-3 text-white">
-            Copyright 2023 Jon Hudak Development
-          </p>
-        </footer>
-      
-    
+    <footer
+      class={`min-h-20 flex flex-col border-t-2 border-gray-600 bg-offBlack mt-3 z-40 ${footerClass}`}
+    >
+      <p class="text-right mt-auto px-3 py-3 text-white">
+        Copyright 2023 Jon Hudak Development
+      </p>
+    </footer>
   </body>
 </html>
 
@@ -57,17 +52,16 @@ const { title, footerClass, background } = Astro.props;
   function handleScroll() {
     console.log(scrollY);
   }
-//   //animation stops when resizing window
-//   let resizeTimer;
-//   window.addEventListener("resize", () => {
-//   document.body.classList.add("resize-animation-stopper");
-//   clearTimeout(resizeTimer);
-//   resizeTimer = setTimeout(() => {
-//     document.body.classList.remove("resize-animation-stopper");
-//   }, 400);
-// });
-// //end animation stopper
-
+  //   //animation stops when resizing window
+  //   let resizeTimer;
+  //   window.addEventListener("resize", () => {
+  //   document.body.classList.add("resize-animation-stopper");
+  //   clearTimeout(resizeTimer);
+  //   resizeTimer = setTimeout(() => {
+  //     document.body.classList.remove("resize-animation-stopper");
+  //   }, 400);
+  // });
+  // //end animation stopper
 </script>
 <style is:global>
   /* .resize-animation-stopper * {
@@ -91,7 +85,6 @@ const { title, footerClass, background } = Astro.props;
     @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;
   }
   p {
-  
     @apply text-white;
   }
   .type,
