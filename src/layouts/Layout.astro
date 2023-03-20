@@ -15,16 +15,13 @@ const { title, footerClass, background } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpg" href="/favicon.jpg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body id="top" class={`overflow-x-hidden flex min-h-screen flex-col layout ${background}`}>
     
-      <div
-        id="top"
-        class={`overflow-hidden flex min-h-screen flex-col layout ${background}`}
-      >
+      
         <Navbar navbarChange={false} />
         <main class="flex flex-col flex-1 grow mt-36 place-items-center">
           
@@ -32,7 +29,7 @@ const { title, footerClass, background } = Astro.props;
           
         </main>
         <div
-          class="bg-blue-500 h-16 w-16 fixed bottom-16 right-16 rounded-full cursor-pointer shadow-2xl z-50"
+          class="bg-blue-500 h-16 w-16 fixed bottom-16 right-16 rounded-full cursor-pointer shadow-2xl z-40"
         >
           <a title="Top of Page" href="#top" class="flex text-center p-auto">
             <div
@@ -50,7 +47,7 @@ const { title, footerClass, background } = Astro.props;
             Copyright 2023 Jon Hudak Development
           </p>
         </footer>
-      </div>
+      
     
   </body>
 </html>
@@ -60,9 +57,23 @@ const { title, footerClass, background } = Astro.props;
   function handleScroll() {
     console.log(scrollY);
   }
+//   //animation stops when resizing window
+//   let resizeTimer;
+//   window.addEventListener("resize", () => {
+//   document.body.classList.add("resize-animation-stopper");
+//   clearTimeout(resizeTimer);
+//   resizeTimer = setTimeout(() => {
+//     document.body.classList.remove("resize-animation-stopper");
+//   }, 400);
+// });
+// //end animation stopper
+
 </script>
 <style is:global>
-
+  /* .resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+  } */
 
   html {
     @apply bg-dark-gray;
@@ -80,7 +91,8 @@ const { title, footerClass, background } = Astro.props;
     @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;
   }
   p {
-    @apply text-white/60;
+  
+    @apply text-white;
   }
   .type,
   .notype {
@@ -101,9 +113,6 @@ const { title, footerClass, background } = Astro.props;
 
   .quotebox :first-child {
     @apply mt-0;
-  }
-  #hamburgerLinks a {
-    @apply block py-10 px-5 hover:bg-gray-800  text-5xl font-sans font-thin text-right w-full h-full;
   }
 
   .imgShadow-sm {

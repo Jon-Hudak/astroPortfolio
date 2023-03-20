@@ -5,12 +5,12 @@ import heroPic from "/images/glitchLarge.webm";
 
 <section
   id="hero"
-  class="flex flex-col place-items-center w-auto mt-2 mx-1 md:mt-5 max-w-screen md:max-w-5xl overflow-hidden"
+  class="flex flex-col place-items-center w-auto mx-1 md:mt-5 max-w-screen md:max-w-5xl overflow-hidden"
 >
   <div class="overflow-hidden border border-accent-blue rounded-lg">
-    <div class="cont py-16 px-0 lg:relative lg:w-[1000px]">
+    <div class="bg- py-16 px-0 lg:relative lg:w-[1000px]">
       <div
-        class={`flex flex-col-reverse  lg:flex-row w-full grow  px-2 sm:px-24 sm:mt-6 max-w-5xl justify-between content-center rounded-md items-center `}
+        class={`flex flex-col-reverse lg:flex-row w-full grow px-2 sm:px-2 sm:mt-6 max-w-5xl justify-between content-center rounded-md items-center gap-8`}
       >
         <div class="px-10 max-w-lg">
           <h1
@@ -19,14 +19,13 @@ import heroPic from "/images/glitchLarge.webm";
             Freelance Web <span class="text-accent-blue">Developer</span>
           </h1>
           <p
-            class="font-sans mt-5 text-xl sm:text-2xl text-center lg:text-left animate-hero"
+            class="font-sans mt-5 text-xl sm:text-2xl text-center lg:text-left"
           >
-            I make fast, search engine optimized websites for businesses in the
-            Pittsburgh area.
+            Making fast, custom websites for small businesses in the Pittsburgh area with a focus on SEO.
           </p>
 
           <button
-            class={`relative py-6 px-6 mt-10 w-full button animation-spin${
+            class={`relative py-6 px-6 mt-10 w-full button ${
               contactOpen ? "bg-sky-600" : "bg-accent-blue"
             }`}
           >
@@ -34,7 +33,7 @@ import heroPic from "/images/glitchLarge.webm";
           </button>
         </div>
           <video
-            class="imgShadow-sm lg:absolute lg:bottom-0 lg:-right-24 lg:w-[30rem] lg:rounded-none lg:border-none lg:shadow-none z-10 w-48 object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-hero heroSlid"
+            class="imgShadow-sm lg:absolute lg:bottom-0 lg:-right-24 lg:w-[30rem] lg:rounded-none lg:border-none lg:shadow-none z-10 w-48 h-48 lg:h-auto object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-heroRoll lg:animate-heroSlide"
             autoPlay
             loop
             muted
@@ -63,14 +62,4 @@ import heroPic from "/images/glitchLarge.webm";
     </div>
   </div>
 </section>
-<style>
-  
-  
-  @keyframes heroSlide{
-          0% { opacity: 0; transform: translate(50%);}
-          100% {opacity: 1; transform: translate(0px);}
-        }
-        .heroSlide{
-          animation: heroSlide 2s 2s ease-out forwards;
-        }
-</style>
+

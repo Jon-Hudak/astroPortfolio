@@ -3,6 +3,17 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,css}"],
   theme: {
     extend: {
+      transitionDelay:{
+        "0":"0ms",
+        "50":"50ms",
+        "100":"100ms",
+        "150":"150ms",
+        "200":"200ms",
+        "250":"250ms",
+        "300":"300ms",
+        "400":"400ms",
+        "500":"500ms",
+      },
       fontFamily: {
         title: ["'Aldrich', sans-serif"],
       },
@@ -23,15 +34,30 @@ module.exports = {
           "80%": { transform: "scaleY(110%)" },
           "100%": { transform: "scaleY(100%)" },
         },
+        imgRoll: {
+          "0%": {opacity:"0", transform: " translate(50%) rotate(45deg)"},
+          "100%": {opacity:"1", transform: "translate(0) rotate(0deg) "}
+        },
         imgSlide: {
-          "0%": {opacity:0, transform: "translate(50%)"},
-          "100%": {opacity:1, transform: "translate(0)"}
+          "0%": {opacity:"0", transform: "translate(50%)"},
+          "100%": {opacity:"1", transform: "translate(0)",}
+        },
+        slideNavLiAnim: {
+          "0%":{opacity:"0", transform: "translateX(500px);"},
+          "100%":{opacity:"1",transform: "translateX(0);"}
+        },
+        slideNavLiAnimClose: {
+          "0%":{transform: "translateX(0);"},
+          "100%":{transform: "translateX(500px);"}
         }
        
       },
       animation: {
         menuOpen: "menuAnim 0.3s ease-in-out forwards",
-        hero: "imgSlide 2s ease-out-forwards"
+        heroSlide: "imgSlide 2s ease-out forwards",
+        heroRoll: "imgRoll 2s ease-out forwards",
+        slideNavLi: "slideNavLiAnim 1s ease-out forwards",
+        slideNavLiClose:"slideNavLiAnimClose 1s ease-in forwards"
       },
     },
   },
