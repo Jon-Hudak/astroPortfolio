@@ -27,9 +27,10 @@ const infoItems = [
 ---
 
 <section
-  class="place-items-center bg-neutral-200 w-screen m-auto py-16 px-5 md:px-10"
+  class="py-16 place-items-center bg-neutral-200 w-screen m-auto px-5 md:px-10"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-8">
+<h2 class="h2 text-black ">Web Design Services</h2>
+  <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-8 max-w-7xl">
     {
       infoItems.map((item) => (
         <InfoCard title={item.title} icon={item.icon} text={item.text} />

@@ -50,18 +50,9 @@ const { title, footerClass, background } = Astro.props;
 <script>
   const scrollY = window.addEventListener("scroll", handleScroll);
   function handleScroll() {
-    console.log(scrollY);
+    //console.log(scrollY);
   }
-  //   //animation stops when resizing window
-  //   let resizeTimer;
-  //   window.addEventListener("resize", () => {
-  //   document.body.classList.add("resize-animation-stopper");
-  //   clearTimeout(resizeTimer);
-  //   resizeTimer = setTimeout(() => {
-  //     document.body.classList.remove("resize-animation-stopper");
-  //   }, 400);
-  // });
-  // //end animation stopper
+
 </script>
 <style is:global>
   /* .resize-animation-stopper * {
@@ -79,7 +70,7 @@ const { title, footerClass, background } = Astro.props;
     @apply text-2xl py-2;
   }
   .h2 {
-    @apply my-5 mx-5 font-bold font-title text-2xl sm:text-3xl text-white after:absolute;
+    @apply mx-5 font-bold font-title text-3xl sm:text-4xl;
   }
   .cont {
     @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;
@@ -109,4 +100,10 @@ const { title, footerClass, background } = Astro.props;
   a{
     @apply text-blue-600 hover:text-blue-800 underline;
   }
+  .animate {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity 2s, transform 2s;
+    }
+  
 </style>
