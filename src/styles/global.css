@@ -5,9 +5,7 @@
   xlarge: 1280px;
   xxlarge: 1536px
  */
- *{
-  border: solid red;
-}
+
 .line {
   fill: none;
   stroke: white;
