@@ -40,7 +40,7 @@ module.exports = {
         },
         imgSlide: {
           "0%": {opacity:"0", transform: "translate(50%)"},
-          "100%": {opacity:"1", transform: "translate(0)",}
+          "100%": {opacity:"1", transform: "translate(0rem)",}
         },
         slideNavLiAnim: {
           "0%":{opacity:"0", transform: "translateX(500px);"},
@@ -49,6 +49,10 @@ module.exports = {
         slideNavLiAnimClose: {
           "0%":{transform: "translateX(0);"},
           "100%":{transform: "translateX(500px);"}
+        },
+        fadeUp:{
+          "0%":{transform: "translateY(16px);"},
+          "100%":{transform: "translateY(0);"}
         }
        
       },
@@ -57,7 +61,8 @@ module.exports = {
         heroSlide: "imgSlide 2s ease-out forwards",
         heroRoll: "imgRoll 2s ease-out forwards",
         slideNavLi: "slideNavLiAnim 1s ease-out forwards",
-        slideNavLiClose:"slideNavLiAnimClose 1s ease-in forwards"
+        slideNavLiClose:"slideNavLiAnimClose 1s ease-in forwards",
+        fadeUp:"fadeUp 1s ease-out forwards"
       },
     },
   },

@@ -1,0 +1,39 @@
+---
+import { Fragment } from "astro/dist/runtime/server";
+import InfoCard from "./InfoCard.astro";
+
+const infoItems = [
+  {
+    text: "Using website builders can cause sites to look generic and canned. Building websites without these templates means more flexibility, control, and performance. Let's create custom website that's optimized for success.",
+    icon: "lightbulb",
+    title: "Custom Websites",
+  },
+  {
+    text: "In today's digital age, it's crucial for businesses to have a website that looks great and functions smoothly on any device. That's why I take a mobile-first approach to design. A responsive site will help you reach more people and increase engagement on your website.",
+    icon: "phone",
+    title: "Mobile-Friendly",
+  },
+  // {
+  //   text: "If a product is confusing to use, then people don't want to use it, no matter how beautiful it is. This is where a focus on user-experience comes in to eliminate lost conversions due to users not knowing how to interact with your website or app.",
+  //   icon: "lightbulb",
+  //   title: "User Experience",
+  // },
+  {
+    text: "Having a beautiful and functional website is great, but it's not enough if no one can find it. That's where <a href='https://en.wikipedia.org/wiki/Search_engine_optimization'> search engine optimization (SEO)</a> comes in. By prioritizing SEO, you will increase your online visibility and reach a wider audience.",
+    icon: "magnifyingGlass",
+    title: "Search Engine Optimization",
+  },
+];
+---
+
+<section
+  class="place-items-center bg-neutral-200 w-screen m-auto py-16 px-5 md:px-10"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-8">
+    {
+      infoItems.map((item) => (
+        <InfoCard title={item.title} icon={item.icon} text={item.text} />
+      ))
+    }
+  </div>
+</section>

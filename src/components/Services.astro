@@ -1,0 +1,33 @@
+---
+import InfoCard from "./InfoCard.astro";
+
+const infoItems = [
+  {
+    text: "Using website builders can cause sites to look generic and canned. Building websites without these templates means more flexibility, control, and performance. Let's create custom website that's optimized for success.",
+    icon: "lightbulb",
+    title: "Custom Websites",
+  },
+  {
+    text: "Using website builders can cause sites to look generic and canned. Building websites without these templates means more flexibility, control, and performance. Let's create custom website that's optimized for success.",
+    icon: "lightbulb",
+    title: "No Templates",
+  },
+  {
+    text: "Using website builders can cause sites to look generic and canned. Building websites without these templates means more flexibility, control, and performance. Let's create custom website that's optimized for success.",
+    icon: "lightbulb",
+    title: "No Templates",
+  },
+  ]
+---
+<section class="place-items-center bg-neutral-400 w-screen m-auto flex flex-col py-16">
+    <figure
+      class="grid grid-cols-1 md:gap-0 lg:grid-cols-3 gap-10 w-full max-w-7xl"
+    >
+      {
+        infoItems.map((item) => (
+          <InfoCard title={item.title} icon={item.icon}>
+            {item.text}
+          </InfoCard>
+        ))
+      }
+    </figure></section>

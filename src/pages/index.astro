@@ -1,44 +1,14 @@
 ---
 import Hero from "../components/Hero.astro";
-import Info from "../components/Info.astro";
+import InfoSection from "../components/InfoSection.astro";
+import Services from "../components/Services.astro";
+import Testimonials from "../components/Testimonials.astro";
 import Layout from "../layouts/Layout.astro";
-
-export const infoItems = [
-  {
-    text: "Using website builders can cause sites to look generic and canned. Building websites without these templates means more flexibility, control, and performance. Let's create custom website that's optimized for success.",
-    icon: "lightbulb",
-    title: "No Templates",
-  },
-  {
-    text: "In today's digital age, it's crucial for businesses to have a website that looks great and functions smoothly on any device. That's why I take a mobile-first approach to design. A responsive site will help you reach a wider audience and increase engagement on your website.",
-    icon: "phone",
-    title: "Mobile-Friendly",
-  },
-  // {
-  //   text: "If a product is confusing to use, then people don't want to use it, no matter how beautiful it is. This is where a focus on user-experience comes in to eliminate lost conversions due to users not knowing how to interact with your website or app.",
-  //   icon: "lightbulb",
-  //   title: "User Experience",
-  // },
-  {
-    text: "Having a beautiful and functional website is great, but it's not enough if no one can find it. That's where search engine optimization (SEO) comes in. I use the latest SEO techniques to ensure that your website ranks higher in search results and attracts more traffic. By prioritizing SEO, I can help you increase your online visibility and reach a wider audience.",
-    icon: "magnifyingGlass",
-    title: "SEO",
-  },
-];
 ---
 
 <Layout>
   <Hero />
-<section class="place-items-center bg-neutral-400 w-screen m-auto flex flex-col">
-  <figure
-    class="grid grid-cols-1 md:gap-0 lg:grid-cols-3 gap-10 w-full max-w-7xl"
-  >
-    {
-      infoItems.map((item) => (
-        <Info title={item.title} icon={item.icon}>
-          {item.text}
-        </Info>
-      ))
-    }
-  </figure></section>
+  <InfoSection />
+  <Testimonials />
+  <div class="h-[10000px]"></div>
 </Layout>

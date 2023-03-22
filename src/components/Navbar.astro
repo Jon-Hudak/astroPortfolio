@@ -52,25 +52,25 @@ const { navbarChange } = Astro.props;
         class="navLi delay-50"
         
       >
-        <a href="/">Home</a>
+        <a href="/"><div>Home</div></a>
       </li>
       <li
       
         class="navLi delay-100"
       >
-        <a href="/#about"> About</a>
+        <a href="/#about"><div>About</div></a>
       </li>
       <li
       
         class="navLi delay-150"
       >
-        <a href="/#projects"> Projects</a>
+        <a href="/#projects"><div>Projects</div></a>
       </li>
       <li
       
         class="navLi delay-200"
       >
-        <a href="/#contactSection"> Contact</a>
+        <a href="/#contactSection"><div>Contact</div></a>
       </li>
     </ul>
     
@@ -89,11 +89,17 @@ const { navbarChange } = Astro.props;
     backdrop-filter: blur(1.5rem);
   }
   .navLi {
-     @apply p-2 text-4xl md:text-2xl duration-500 translate-x-full md:translate-x-0 w-full hover:text-accent-blue text-center transition cursor-pointer hover:bg-black/30 invisible md:visible;
+     @apply  duration-500 translate-x-full md:translate-x-0 w-full  transition cursor-pointer hover:bg-black/30 invisible md:visible;
  
   }
   .navOpen, .navOpen>.navLi{
     @apply translate-x-0 opacity-100 visible;
+  }
+  li>a{
+    @apply text-white no-underline hover:text-neutral-400 h-full w-full;
+  }
+  a>div{
+    @apply p-2 text-4xl md:text-2xl hover:text-accent-blue text-center;
   }
   /* .navOpen>.navLi{
     @apply translate-x-0;

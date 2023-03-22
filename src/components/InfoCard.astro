@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon";
+const { title, icon, text } = Astro.props;
+---
+
+<!-- <div
+  class="card cot bg-dark-gray text-white pb-5 pt-5 flex flex-col lg:max-w-xs relative min-h-full mx-auto"
+>
+<div class="">
+  <h2 class="notype card-title font-bold text-center lg:text-right text-2xl">
+    {title}
+  </h2>
+  <Icon name={icon} class="w-20 text-center m-auto absolute -top-6 -left-6 bg-dark-gray rounded-full border-accent-blue border-lt-orange-500 border" /></div>
+  <p class="card-info mx-auto text-white/70 mt-2 text-lg flex flex-col shrink">
+    <slot/>
+</p>
+</div> -->
+<article class="card px-5 md:px-10 lg:px-0 text-black text-lg flex align-top gap-4 mx-auto lg:min-w-[29rem lg:max-w-md">
+  <div class="w-24 h-24 shrink-0 rounded-full borde border-accent-blue place-self-start bg-neutral-300">
+    <Icon
+      name={icon}
+      class="h-full w-full"
+    />
+  </div>
+  <div class="relative">
+    <h2 class="card-title font-bold text-center lg:text-left text-lg mt-8 font-title lg:h-10 pt-auto flex place-items-end">
+      {title}
+    </h2>
+
+    <p class="card-info mx-auto mt-2 font-medium text-base " set:html={text}>
+      
+    </p>
+  </div>
+</article>
+<style>
+  /* .card{
+
+  } */
+  a{
+    display:inline;
+    border: solid red;
+  }
+</style>
