@@ -16,13 +16,16 @@ const { title, footerClass, background } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/jpg" href="/favicon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body
-    id="top"
-    class={`overflow-x-hidden min-h-screen ${background}`}
-  >
+  <body id="top" class={`overflow-x-hidden min-h-screen ${background}`}>
     <Navbar navbarChange={false} />
     <main class="">
       <slot />
@@ -52,7 +55,6 @@ const { title, footerClass, background } = Astro.props;
   function handleScroll() {
     //console.log(scrollY);
   }
-
 </script>
 <style is:global>
   /* .resize-animation-stopper * {
@@ -75,7 +77,7 @@ const { title, footerClass, background } = Astro.props;
   .cont {
     @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;
   }
-  
+
   .type,
   .notype {
     @apply relative font-title;
@@ -86,7 +88,6 @@ const { title, footerClass, background } = Astro.props;
   .button {
     @apply font-black font-mono text-lg sm:text-2xl rounded-full shadow-lg bg-accent-blue border border-neutral-400 text-gray-900 hover:bg-sky-700 hover:text-gray-300 active:bg-sky-900 focus:outline-none focus:ring focus:ring-sky-500;
   }
- 
 
   .imgShadow-sm {
     -webkit-filter: drop-shadow(1px 1px 1px #43b0ff);
@@ -97,13 +98,12 @@ const { title, footerClass, background } = Astro.props;
     -webkit-filter: drop-shadow(1px 1px 1px black);
     filter: drop-shadow(-1px 2px 3px black);
   }
-  a{
+  a {
     @apply text-blue-600 hover:text-blue-800 underline;
   }
   .animate {
-        opacity: 1;
-        transform: translateY(0px);
-        transition: opacity 2s, transform 2s;
-    }
-  
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 2s, transform 2s;
+  }
 </style>

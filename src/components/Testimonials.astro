@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image, Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 import { getCollection } from "astro:content";
 
@@ -14,14 +14,13 @@ const testimonials = await getCollection("testimonials");
             <article class="py-10 flex shrink-0 gap-6 flex-col md:flex-row md:odd:flex-row-reverse max-w-7xl mx-auto">
                 <div
                     id="testiInfo"
-                    class="flex md:flex-col place-content-center shrink-0 text-center gap-10 md:gap-5"
+                    class="grid grid-cols-2 place-content-center shrink-0 text-center gap-10 md:gap-5"
                 >
                     <Image
                         class="rounded-full border border-accent-blue h-32 w-32"
                         alt="face"
                         src={item.data.image1}
-                        height={150}
-                        width={150}
+                        width={200}
                         aspectRatio="1:1"
                         format="jpg"
                     />

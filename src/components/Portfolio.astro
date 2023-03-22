@@ -1,18 +1,17 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image, Picture } from "@astrojs/image/components";
 import { getCollection } from "astro:content";
 
 const portfolio = await getCollection("portfolio");
-console.log(portfolio);
 ---
 
-<section class="bg-neutral-100 px-10 py-16">
+<section class="bg-neutral-100 md:px-10 py-16">
     <h2 class="h2">Portfolio</h2>
     {portfolio.map((item)=>
 
     
-    <article class="flex gap-10 relative py-16">
-        <Image alt={item.data.alt} class="object-cover" src={item.data.image1}width={400} height={300} format="webp"/>
+    <article class="flex flex-col lg:flex-row gap-10 relative py-16">
+        <Picture sizes={}widths={[300,500,800]} aspectRatio="4:3" alt={item.data.alt} class="object-cover" src={item.data.image1} format="webp"/>
         <div>
             <h3>{item.data.title}</h3>
             <p>
