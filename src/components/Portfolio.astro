@@ -11,7 +11,8 @@ const portfolio = await getCollection("portfolio");
 
     
     <article class="flex flex-col lg:flex-row gap-10 relative py-16">
-        <Picture sizes={}widths={[300,500,800]} aspectRatio="4:3" alt={item.data.alt} class="object-cover" src={item.data.image1} format="webp"/>
+        <Picture widths={[200, 400, 800]}
+    sizes="(max-width: 600px) 200px, (max-width: 800px) 400px, 800px" aspectRatio="4:3" alt={item.data.alt} class="object-cover" src={item.data.image1} format="webp"/>
         <div>
             <h3>{item.data.title}</h3>
             <p>
