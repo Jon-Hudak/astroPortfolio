@@ -1,5 +1,5 @@
 ---
-// import "../styles/global.css";
+import "../styles/global.css";
 import { Icon } from "astro-icon";
 import Navbar from "../components/Navbar.astro";
 
@@ -16,12 +16,18 @@ const { title, footerClass, background } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/jpg" href="/favicon.jpg" />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" media="none" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+      media="none"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap"
       rel="stylesheet"
-    /> -->
+      media="none"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
