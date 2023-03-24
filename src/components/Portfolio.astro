@@ -7,19 +7,39 @@ const portfolio = await getCollection("portfolio");
 
 <section class="bg-neutral-100 md:px-10 py-16">
     <h2 class="h2">Portfolio</h2>
-    {portfolio.map((item)=>
-
-    
-    <article class="flex flex-col lg:flex-row gap-10 relative py-16">
-        <Picture widths={[200, 400, 800]}
-    sizes="(max-width: 600px) 200px, (max-width: 800px) 400px, 800px" aspectRatio="4:3" alt={item.data.alt} class="object-cover" src={item.data.image1} format="webp"/>
-        <div>
-            <h3>{item.data.title}</h3>
-            <p>
-                {item.body}
-            </p>
-            
-        </div>
-        <a href="https://www.pennbrew.com" class="text-right absolute bottom-5 right-5">Visit the Penn Brewery Site</a>
-    </article>)}
+    {
+        portfolio.map((item) => (
+            <article>
+                <div class="">
+                    <video
+                        class="lazy w-[800px]"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        data-src={item.data.video}
+                        
+                    >
+                    <source src={item.data.video} type="video/webm" />
+                    This image isn't working on your browser. Let me know so I
+                    can fix it!
+                    </video>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-10 relative py-16">
+                    <div>
+                        <h3>{item.data.title}</h3>
+                        <p>{item.body}</p>
+                    </div>
+                    <a
+                        href={item.data.link}
+                        class="text-right absolute bottom-5 right-5"
+                    >
+                        Visit the {item.data.title} Site
+                    </a>
+                </div>
+            </article>
+        ))
+    }
 </section>
+<!-- <Picture widths={[400, 800]}
+    sizes="(max-width: 400px) 400px, 800px" aspectRatio="4:3" alt={item.data.alt} class="object-cover" src={item.data.image1} format="webp"/> -->

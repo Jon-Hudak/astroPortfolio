@@ -20,6 +20,7 @@ module.exports = {
       colors: {
         "dark-gray": "#191919",
         "accent-orange": "#ff872b",
+        "accent-blue-dark":"#768FB2",
         "accent-blue": "#43B0FF",
         gunmetal: "#292F36",
         cardinal: "#D00000",

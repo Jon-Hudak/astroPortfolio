@@ -4,6 +4,9 @@ import "@fontsource/aldrich"
 import { Icon } from "astro-icon";
 import Navbar from "../components/Navbar.astro";
 
+
+const year=new Date().getFullYear()
+
 let showToTop = false;
 // let lastYPos = 0;
 let navbarChange = false;
@@ -39,9 +42,10 @@ const { title, footerClass, background } = Astro.props;
       class={`min-h-20 flex flex-col border-t-2 border-gray-600 bg-offBlack mt-3 z-40 ${footerClass}`}
     >
       <p class="text-right mt-auto px-3 py-3 text-white">
-        Copyright 2023 Jon Hudak Development
+        &copy; {year} Jon Hudak Web Development
       </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
   </body>
 </html>
 
@@ -50,6 +54,7 @@ const { title, footerClass, background } = Astro.props;
   function handleScroll() {
     //console.log(scrollY);
   }
+console.log( )
 </script>
 <style is:global>
   /* .resize-animation-stopper * {

@@ -1,7 +1,8 @@
 ---
 type: Website
 title: Penn Brewery
-image1: /images/portfolio/PennBrewPic.webp
+video: /images/portfolio/PennBrew.webm
+image1: /images/portfolio/PennBrew.webp
 imageAlt: Stefan from Penn Brewery 
 date: 2022/11
 link: https://www.pennbrew.com/

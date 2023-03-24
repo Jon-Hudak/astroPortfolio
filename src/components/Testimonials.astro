@@ -14,7 +14,7 @@ const testimonials = await getCollection("testimonials");
             <article class="py-10 flex shrink-0 gap-6 flex-col md:flex-row md:odd:flex-row-reverse max-w-7xl mx-auto">
                 <div
                     id="testiInfo"
-                    class="grid grid-cols-2 place-content-center shrink-0 text-center gap-10 md:gap-5"
+                    class="flex lg:flex-col place-content-center shrink-0 text-center gap-10 md:gap-5"
                 >
                     <Image
                         class="rounded-full border border-accent-blue h-32 w-32"
@@ -53,7 +53,7 @@ const testimonials = await getCollection("testimonials");
     }
 </section>
 <script>
-    import { observer } from "./observer";
+    import { observer } from "../utils/observer";
 
     const fadeUps = document.querySelectorAll(".fadeUp");
 

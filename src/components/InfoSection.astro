@@ -13,15 +13,10 @@ const infoItems = [
     icon: "phone",
     title: "Mobile-Friendly",
   },
-  // {
-  //   text: "If a product is confusing to use, then people don't want to use it, no matter how beautiful it is. This is where a focus on user-experience comes in to eliminate lost conversions due to users not knowing how to interact with your website or app.",
-  //   icon: "lightbulb",
-  //   title: "User Experience",
-  // },
   {
     text: "Having a beautiful and functional website is great, but it's not enough if no one can find it. That's where <a href='https://en.wikipedia.org/wiki/Search_engine_optimization'> search engine optimization (SEO)</a> comes in. By prioritizing SEO, you will increase your online visibility and reach a wider audience.",
     icon: "magnifyingGlass",
-    title: "Search Engine Optimization",
+    title: "SEO",
   },
 ];
 ---
@@ -30,7 +25,7 @@ const infoItems = [
   class="py-16 place-items-center bg-neutral-200 w-screen m-auto px-5 md:px-10"
 >
 <h2 class="h2 text-black ">Web Design Services</h2>
-  <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-8 max-w-7xl">
+  <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-10 lg:gap-8 max-w-7xl">
     {
       infoItems.map((item) => (
         <InfoCard title={item.title} icon={item.icon} text={item.text} />
