@@ -11,12 +11,30 @@ let showToTop = false;
 // let lastYPos = 0;
 let navbarChange = false;
 
-const { title, footerClass, background } = Astro.props;
+const { title, description, ogImg, slug, footerClass, background } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>{title}</title>
+      <meta
+        name="description"
+        content={description}
+      />
+      <meta
+        name="keywords"
+        content="Website, Custom, SEO, Search Engine Optimization, Portfolio, Site, Build, Create, React, Astro, Wordpress, Wix, HTML, CSS, JavaScript, Coding, Webapps, Apps, Programmer, Web Developer, Development"
+      />
+      <meta name="author" content="Jon Hudak" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:title" content={title} />
+      <meta property="og:image" content={`https://jonhudak.dev${ogImg}`} />
+      <meta property="og:title" content="Jon Hudak Web Development" />
+      <meta property="og:url" content={`https://www.jonhudak.dev/${slug}`} />
+      <meta property="og:type" content="website" />
+      <meta property="og:description" content={description} />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/jpg" href="/favicon.jpg" />
@@ -45,7 +63,7 @@ const { title, footerClass, background } = Astro.props;
         &copy; {year} Jon Hudak Web Development
       </p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script> -->
   </body>
 </html>
 
@@ -72,7 +90,10 @@ console.log( )
     @apply text-2xl py-2;
   }
   .h2 {
-    @apply mx-5 font-bold font-title text-3xl sm:text-4xl;
+    @apply font-thin text-5xl sm:text-5xl leading-snug;
+  }
+  .h3 {
+    @apply text-2xl font-bold;
   }
   .cont {
     @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;

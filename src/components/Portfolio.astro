@@ -5,14 +5,16 @@ import { getCollection } from "astro:content";
 const portfolio = await getCollection("portfolio");
 ---
 
-<section class="bg-neutral-100 md:px-10 py-16">
-    <h2 class="h2">Portfolio</h2>
+<section class="bg-neutral-100 md:px-10 pt-16">
+    <h2 class="h2 pl-8">Portfolio</h2>
     {
-        portfolio.map((item) => (
-            <article>
-                <div class="">
+        portfolio.map((item) =>{
+            return(
+            <article class="flex flex-col md:flex-row odd:md:flex-row-reverse py-16 gap-5 relative">
+                
+                
                     <video
-                        class="lazy w-[800px]"
+                        class="lazy w-[500px] sm:w-[600px] xl:-[1000px] shrink"
                         autoPlay
                         loop
                         muted
@@ -24,21 +26,21 @@ const portfolio = await getCollection("portfolio");
                     This image isn't working on your browser. Let me know so I
                     can fix it!
                     </video>
-                </div>
-                <div class="flex flex-col lg:flex-row gap-10 relative py-16">
-                    <div>
-                        <h3>{item.data.title}</h3>
+                
+                <div class="flex flex-col lg:flex-row gap-10 mt-10 px-5">
+                    <div class="">
+                        <h3 class="h3 md:text-center">{item.data.title}</h3>
                         <p>{item.body}</p>
                     </div>
                     <a
                         href={item.data.link}
-                        class="text-right absolute bottom-5 right-5"
+                        class="text-right absolute bottom-0 right-3"
                     >
                         Visit the {item.data.title} Site
                     </a>
                 </div>
-            </article>
-        ))
+            </article>)
+        })
     }
 </section>
 <!-- <Picture widths={[400, 800]}
