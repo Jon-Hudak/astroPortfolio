@@ -1,0 +1,72 @@
+<section class="bg-white">
+    <h2 class="h2 px-5">Contact</h2>
+    <form
+        name="Contact"
+        class="flex flex-col md:px-10 my-5 max-w-xl mx-auto"
+        method="POST"
+        data-netlify="true"
+        netlify
+        data-netlify-honeypot="bot-field"
+    >
+        <input name="bot-field" class="hidden" />
+        <input type="hidden" name="form-name" value="Contact" />
+        <label class="formLabel relative" for="name"
+            ><span class="text-red-500 absolute -left-3">*</span> Name:</label
+        >
+        <input
+           
+            required
+            name="name"
+            type="text"
+            placeholder="Charles Offdenson"
+        />
+
+        <label class="formLabel relative" for="email"
+            ><span class="text-red-500 absolute -left-3">*</span> Email:
+        </label>
+        <input
+            required
+            id="email"
+            name="email"
+            type="email"
+            placeholder="cfo@klok.com"
+        />
+        <label class="formLabel" for="message"> Message:</label>
+        <textarea
+            id="message"
+            name="message"
+            class="overflow-y-aut"
+            rows="6"
+            placeholder="Message"></textarea>
+        <label class="text-lg mt-3" for="marketing"
+            >
+            <input
+                
+                required
+                name="name"
+                type="checkbox"
+                placeholder="Charles Offdenson"
+                class="accent-accent-blue"
+                
+            /> Recieve newsletter/marketing emails (not required)</label>
+        
+        <button
+            type="submit"
+            class="py-3 px-6 mt-10 bg-accent-blue w-36 rounded-full ml-auto font-bold text-lg sm:text-xl"
+        >
+            Submit
+        </button>
+    </form>
+    <p class="text-center text-lg">
+        or email me at <a
+            class=""
+            href="mailto:jon@jonhudak.dev">jon@jonhudak.dev</a
+        >
+    </p>
+</section>
+<style>
+    input,
+    textarea {
+        @apply border border-accent-blue rounded-lg bg-gunmetal px-5 py-3 text-white;
+    }
+</style>
