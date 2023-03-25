@@ -4,7 +4,7 @@ import InfoCard from "./InfoCard.astro";
 
 const infoItems = [
   {
-    text: "Using website builders can cause sites to look generic and canned. Building websites without these templates means more flexibility, control, and performance. Let's create custom website that's optimized for success.",
+    text: "Using website builders can cause sites to look generic and canned. Building websites without these templates means more flexibility, control, and performance. In short, a custom website is optimized for success.",
     icon: "lightbulb",
     title: "Custom Websites",
   },
@@ -22,10 +22,10 @@ const infoItems = [
 ---
 
 <section
-  class="py-16 place-items-center bg-neutral-200 w-screen m-auto px-5 md:px-10"
+  class="py-16 place-items-center bg-white"
 >
-<h2 class="h2 text-black ">Web Design Services</h2>
-  <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-10 lg:gap-8 max-w-7xl">
+<h2 class="h2 text-black px-5">Web Design Services</h2>
+  <div class="px-3 md:px-10 mt-16 grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-10 lg:gap-8 max-w-7x">
     {
       infoItems.map((item) => (
         <InfoCard title={item.title} icon={item.icon} text={item.text} />

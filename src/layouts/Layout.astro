@@ -1,39 +1,36 @@
 ---
 import "../styles/global.css";
-import "@fontsource/aldrich"
+import "@fontsource/aldrich";
 import { Icon } from "astro-icon";
 import Navbar from "../components/Navbar.astro";
 
-
-const year=new Date().getFullYear()
+const year = new Date().getFullYear();
 
 let showToTop = false;
 // let lastYPos = 0;
 let navbarChange = false;
 
-const { title, description, ogImg, slug, footerClass, background } = Astro.props;
+const { title, description, ogImg, slug, footerClass, background } =
+  Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>{title}</title>
-      <meta
-        name="description"
-        content={description}
-      />
-      <meta
-        name="keywords"
-        content="Website, Custom, SEO, Search Engine Optimization, Portfolio, Site, Build, Create, React, Astro, Wordpress, Wix, HTML, CSS, JavaScript, Coding, Webapps, Apps, Programmer, Web Developer, Development"
-      />
-      <meta name="author" content="Jon Hudak" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content={title} />
-      <meta property="og:image" content={`https://jonhudak.dev${ogImg}`} />
-      <meta property="og:title" content="Jon Hudak Web Development" />
-      <meta property="og:url" content={`https://www.jonhudak.dev/${slug}`} />
-      <meta property="og:type" content="website" />
-      <meta property="og:description" content={description} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Website, Custom, SEO, Search Engine Optimization, Portfolio, Site, Build, Create, React, Astro, Wordpress, Wix, HTML, CSS, JavaScript, Coding, Webapps, Apps, Programmer, Web Developer, Development"
+    />
+    <meta name="author" content="Jon Hudak" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content={title} />
+    <meta property="og:image" content={`https://jonhudak.dev${ogImg}`} />
+    <meta property="og:title" content="Jon Hudak Web Development" />
+    <meta property="og:url" content={`https://www.jonhudak.dev/${slug}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -46,7 +43,7 @@ const { title, description, ogImg, slug, footerClass, background } = Astro.props
     <main class="">
       <slot />
     </main>
-    <nav
+    <!-- <nav
       class="bg-blue-500 h-16 w-16 fixed bottom-16 right-16 rounded-full cursor-pointer shadow-2xl z-40"
     >
       <a title="Top of Page" href="#top" class="flex text-center p-auto">
@@ -54,12 +51,12 @@ const { title, description, ogImg, slug, footerClass, background } = Astro.props
           <Icon name="arrow" />
         </div>
       </a>
-    </nav>
+    </nav> -->
 
     <footer
-      class={`min-h-20 flex flex-col border-t-2 border-gray-600 bg-offBlack mt-3 z-40 ${footerClass}`}
-    >
-      <p class="text-right mt-auto px-3 py-3 text-white">
+      class={`p-3 min-h-20 flex flex-col sm:flex-row text-center justify-between place-items-center border-t-2 border-gray-600 bg-offBlack mt-3 text-white z-40 ${footerClass}`}
+    ><p>Jon Hudak | Elizabeth, PA | <a href="tel:412-405-1059" class="text-white">412-405-1059</a></p>
+      <p class="mt-auto  py-3 ">
         &copy; {year} Jon Hudak Web Development
       </p>
     </footer>
@@ -68,12 +65,29 @@ const { title, description, ogImg, slug, footerClass, background } = Astro.props
 </html>
 
 <script>
-  const scrollY = window.addEventListener("scroll", handleScroll);
-  function handleScroll() {
-    //console.log(scrollY);
-  }
-console.log( )
+  //navbar change intersection observer
+  const threshold = 0.2;
+  const rootMargin = "0% 0% 0% 50%";
+  const heroSection = document.querySelector("#hero");
+  const navbar = document.querySelector("#nav");
+  const heroObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          navbar.classList.add("navChange");
+          console.log("not intersecting");
+        } else {
+          navbar.classList.remove("navChange");
+          console.log("intersecting");
+        }
+      });
+    },
+    { threshold: threshold, rootMargin: rootMargin }
+  );
+
+  heroObserver.observe(heroSection);
 </script>
+
 <style is:global>
   /* .resize-animation-stopper * {
     animation: none !important;
@@ -90,10 +104,10 @@ console.log( )
     @apply text-2xl py-2;
   }
   .h2 {
-    @apply font-thin text-5xl sm:text-5xl leading-snug;
+    @apply font-thin  text-5xl sm:text-5xl leading-snug;
   }
   .h3 {
-    @apply text-2xl font-bold;
+    @apply text-2xl font-bold font-title;
   }
   .cont {
     @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;
@@ -122,9 +136,26 @@ console.log( )
   a {
     @apply text-blue-600 hover:text-blue-800 underline;
   }
+
+  .fadeUp {
+    opacity: 0.1;
+    transform: translateY(50px);
+  }
+  .rotated {
+    transform: rotate(45deg);
+  }
   .animate {
     opacity: 1;
     transform: translateY(0px);
     transition: opacity 2s, transform 2s;
   }
 </style>
+<script>
+  import observer from "../utils/observer";
+
+  const fadeUps = document.querySelectorAll(".fadeUp");
+  console.log(fadeUps);
+  const rotates = document.querySelectorAll(".rotated");
+  observer(fadeUps, "animate", 0.2);
+  observer(rotates, "animate");
+</script>

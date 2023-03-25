@@ -5,43 +5,49 @@ import { getCollection } from "astro:content";
 const portfolio = await getCollection("portfolio");
 ---
 
-<section class="bg-neutral-100 md:px-10 pt-16">
+<section class="bg-gradient-to-b from-accent-blue to-blue-900 md:x-10 py-16">
     <h2 class="h2 pl-8">Portfolio</h2>
-    {
-        portfolio.map((item) =>{
-            return(
-            <article class="flex flex-col md:flex-row odd:md:flex-row-reverse py-16 gap-5 relative">
-                
-                
-                    <video
-                        class="lazy w-[500px] sm:w-[600px] xl:-[1000px] shrink"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        data-src={item.data.video}
-                        
-                    >
-                    <source src={item.data.video} type="video/webm" />
-                    This image isn't working on your browser. Let me know so I
-                    can fix it!
-                    </video>
-                
-                <div class="flex flex-col lg:flex-row gap-10 mt-10 px-5">
-                    <div class="">
-                        <h3 class="h3 md:text-center">{item.data.title}</h3>
-                        <p>{item.body}</p>
-                    </div>
-                    <a
-                        href={item.data.link}
-                        class="text-right absolute bottom-0 right-3"
-                    >
-                        Visit the {item.data.title} Site
-                    </a>
-                </div>
-            </article>)
-        })
-    }
+    
+    <div class="pt-8 flex flex-col sm:flex-row w-full justify-center gap-5 lg:px-24">
+        {
+            portfolio.map((item) => {
+                return (
+                    <article class="fadeUp flex flex-col  gap-5 relative shrink">
+                        <a href={item.data.link} class="relative  no-underline">
+                            <video
+                                class="rounded-lg lazy max-h-ful object-fill shrink shadow-lg"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                data-src={item.data.video}
+                            >
+                                <source
+                                    src={item.data.video}
+                                    type="video/webm"
+                                />
+                                This image isn't working on your browser. Let me
+                                know so I can fix it!
+                            </video>
+                            <div class="fadeUp relative mx-auto -top-16 h-24 bg-dark-gray w-2/3 flex flex-col rounded-b-md shadow-md min-w-max">
+                                
+                                    <h3 class="h3 py-3 px-3 text-center text-white sm:text-center">
+                                        {item.data.title}
+                                    </h3>
+                                    <a
+                                        href={item.data.link}
+                                        class="text-center text-accent-blue"
+                                    >
+                                        Visit the {item.data.title} Site
+                                    </a>
+                                
+                            </div>
+                        </a>
+                    </article>
+                );
+            })
+        }
+    </div>
 </section>
 <!-- <Picture widths={[400, 800]}
     sizes="(max-width: 400px) 400px, 800px" aspectRatio="4:3" alt={item.data.alt} class="object-cover" src={item.data.image1} format="webp"/> -->

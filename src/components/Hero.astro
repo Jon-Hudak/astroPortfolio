@@ -5,7 +5,7 @@ const heroPic = "/images/glitchLarge.webm";
 ---
 <section
   id="hero"
-  class="flex flex-col-reverse lg:flex-row pt-32 pb-12 lg:pb-0 px-0 lg:pl-10 place-items-center justify-between lg:h-[800px] xl:h-[850px] overflow-hidden"
+  class="flex flex-col-reverse lg:flex-row pt-32 pb-12 lg:pb-0 px-0 lg:pl-10 place-items-center justify-between lg:h-[700px] xl:h-[80px overflow-hidden bg-gradient-to-b from-dark-gray to-neutral-700"
 >
   <div
     id="heroInfo"
@@ -16,7 +16,7 @@ const heroPic = "/images/glitchLarge.webm";
     >
       Pittsburgh Web <span class="text-accent-blue">Developer</span>
     </h1>
-    <h2 class="font-sans mt-5 text-xl sm:text-2xl text-center text-white">
+    <h2 class="font-sans mt-5 text-xl sm:text-2xl text-center text-white mx-8">
       Custom website design for small businesses in the Pittsburgh area with a
       focus on SEO.
     </h2>
@@ -32,7 +32,7 @@ const heroPic = "/images/glitchLarge.webm";
   <div class="lg:w-1/2 flex place-content-center lg:place-content-end">
     <video
       id="heroPic"
-      alt="A photo of Jon Hudak giving a thumbs up with a glitch effect."
+      aria-label="A photo of Jon Hudak giving a thumbs up with a glitch effect."
       class="mt-5 lg:mt-12 imgShadow-sm lg:rounded-none lg:border-none lg:shadow-none z-10 w-48 h-48 min-h-max lg: lg:w-auto lg:h-auto object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-heroRoll lg:animate-heroSlide"
       autoplay
       loop
@@ -41,6 +41,7 @@ const heroPic = "/images/glitchLarge.webm";
       
     >
       <source src={heroPic} type="video/webm" />
+      This animation doesn't work on your browser. Let me know so I can fix it!
     </video>
   </div>
 </section>

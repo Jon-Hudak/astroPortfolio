@@ -6,13 +6,27 @@ import Services from "../components/Services.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Layout from "../layouts/Layout.astro";
 
-const ogImg = "/images/ogPhoto.webp"
+const ogImg = "/images/ogPhoto.webp";
 ---
 
-<Layout title="Jon Hudak Web Development" description="Attract more customers with a custom-made website!" ogImg={ogImg} slug="">
-  
+<Layout
+  title="Jon Hudak Web Development"
+  description="Attract more customers with a custom-made website!"
+  ogImg={ogImg}
+  slug=""
+>
   <Hero />
   <InfoSection />
   <Testimonials />
   <Portfolio />
 </Layout>
+<script>
+  import observer from "../utils/observer";
+
+  const fadeUps = document.querySelectorAll(".fadeUp");
+  console.log(fadeUps);
+  const rotates = document.querySelectorAll(".rotated");
+  observer(fadeUps, "animate");
+  observer(rotates, "animate");
+  
+</script>
