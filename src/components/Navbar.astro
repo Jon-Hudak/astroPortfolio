@@ -6,7 +6,7 @@ const { navbarChange } = Astro.props;
 const navLogo = "/images/logo-no-background.svg";
 ---
 
-<header class=" fixed w-screen top-0 z-50 px-3">
+<header class=" fixed w-screen top-0 z-50 px-3 md:px-1">
   <nav id="nav"
     class="flex justify-between items-center "
   >
@@ -64,7 +64,7 @@ const navLogo = "/images/logo-no-background.svg";
       </li>
       <li class="navLi delay-250">
         
-        <a href="tel:4124051059" class="whitespace-nowrap font- font-title"><div>412-405-1059</div></a>
+        <a href="tel:4124051059" class="whitespace-nowrap font-title "><div class="bg-accent-blue rounded-full px-5 py-3 text-offBlack">412-405-1059</div></a>
       </li>
     </ul>
   </nav>
