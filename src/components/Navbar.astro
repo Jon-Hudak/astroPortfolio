@@ -6,9 +6,9 @@ const { navbarChange } = Astro.props;
 const navLogo = "/images/logo-no-background.svg";
 ---
 
-<header class=" fixed w-screen top-0 z-50 px-3 md:px-1">
+<header class=" fixed w-screen top-0 z-50 ">
   <nav id="nav"
-    class="flex justify-between items-center "
+    class="flex justify-between items-center px-3 md:px-1"
   >
     <a class="h-full" href="/" aria-label="Homepage">
       <img class="h-full" alt="" src={navLogo} />
