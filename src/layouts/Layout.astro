@@ -45,7 +45,7 @@ const socialImg = new URL(ogImg, Astro.site)
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body id="top" class={`flex flex-col overflow-x-hidden min-h-screen ${background}`}>
+  <body class={`flex flex-col overflow-x-hidden min-h-screen ${background}`}>
     <Navbar navbarChange={false} />
     <main class="">
       <slot />
@@ -117,13 +117,6 @@ const socialImg = new URL(ogImg, Astro.site)
     @apply px-5 text-white bg-dark-gray rounded-lg border border-accent-blue shadow-xl;
   }
 
-  .type,
-  .notype {
-    @apply relative font-title;
-  }
-  .type::after {
-    @apply absolute;
-  }
   .button {
     @apply font-black font-mono text-2xl rounded-full shadow-lg bg-accent-blue border border-neutral-400 text-gray-900 hover:bg-sky-700 hover:text-gray-300 active:bg-sky-900 focus:outline-none focus:ring focus:ring-sky-500;
   }

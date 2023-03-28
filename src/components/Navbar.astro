@@ -6,7 +6,7 @@ const { navbarChange } = Astro.props;
 const navLogo = "/images/logo-no-background.svg";
 ---
 
-<header class="fixed w-screen top-0 z-50">
+<header id="navHeader" class="fixed w-screen top-0 z-50 " >
   <nav id="nav" class="flex justify-between items-center px-3 md:px-1">
     <a class="h-full" href="/" aria-label="Homepage">
       <img class="h-full" alt="" src={navLogo} />
@@ -89,14 +89,8 @@ const navLogo = "/images/logo-no-background.svg";
   li > a {
     @apply text-white no-underline w-full p-2 text-4xl md:text-base lg:text-2xl hover:text-accent-blue text-center;
   }
-  /* a:focus,a:focus-visible{
-     outline: auto 2px orange;
-  } */
-  /* a > div {
-    @apply ;
-  } */
   #nav {
-    @apply bg-transparent p-3 sm:px-5 sm:py-3 h-24 sm:h-32  text-white transition-all duration-500;
+    @apply bg-transparent p-3 sm:px-5 sm:py-3 h-24 sm:h-32 text-white transition-all duration-500;
   }
   #nav.navChange {
     @apply h-20 bg-offBlack transition-all duration-500;
