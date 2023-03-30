@@ -1,0 +1,82 @@
+---
+import FAQ from "../components/FAQ.astro";
+import H1 from "../components/H1.astro";
+import Layout from "../layouts/Layout.astro";
+
+const glitchPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
+---
+
+<Layout>
+    <H1 classes="">Pittsburgh Website Developer</H1>
+    <section
+        class="pt-8 text-white flex flex-col-reverse md:flex-row relative justify-between place-items-center"
+    >
+        <article class="px-8 md:w-1/2">
+            <h2 class="h2 mt-8">About Jon</h2>
+            <p>
+                Hi, I'm Jon, a local web developer from the Pittsburgh area. I'm
+                passionate about building beautiful and functional websites that
+                provide great user experiences. My expertise lies in building
+                custom websites using HTML, CSS, and Javascript. While I am
+                familiar and can work with tools like Wordpress and Wix, I don’t
+                find them as engaging and fun to work with.
+            </p>
+
+            <p>
+                I love the creativity and problem-solving aspects of web
+                development, and I'm excited about the constantly evolving
+                nature of this field. I approach each project with a fresh
+                perspective and a commitment to delivering the best possible
+                outcome, even if I have to stay up all night to achieve it!
+            </p>
+
+            <p>
+                In my spare time, you can likely find me performing karaoke,
+                playing board games (including DnD!), and even experimenting
+                with new technologies and frameworks to stay up-to-date with the
+                latest trends in web development. In my opinion, the most
+                important skill a developer, or any programmer, can have is
+                curiosity and, a willingness to perpetually learn.
+            </p>
+
+            <p>
+                If you're looking for a web developer who is passionate,
+                dedicated, and committed to excellence, I'd love to hear about
+                your project and see how I can help. Feel free to get in touch!
+            </p>
+            <p id=""class="signature text-right text-5xl pb-8 select-none ">Jon Hudak</p>
+        </article>
+        <div
+            class="mt-auto h-min md:place-content-end absolut right-0 bottom-0 md:sticky"
+        >
+            <video
+                id="heroPic"
+                aria-label="A photo of Jon Hudak giving a thumbs up with a glitch effect."
+                class="md:mt-12 imgShadow-sm md:rounded-none md:border-none md:shadow-none z-10 w-48 h-48 min-h-max md:w-auto md:h-auto object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-heroRoll md:animate-heroSlide"
+                autoplay
+                loop
+                muted
+                playsInline
+            >
+                <source src={glitchPic} type="video/webm" />
+                This animation doesn't work on your browser. Let me know so I can
+                fix it!
+            </video>
+        </div>
+    </section>
+    <FAQ filter="Web Design"/>
+</Layout>
+
+<style>
+    p {
+        @apply mt-8 lg:text-xl;
+    }
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
+
+    .signature{
+        font-family:  'Birthstone Bounce', cursive;
+        transform:rotate(-5deg);
+    }
+    </style>

@@ -1,0 +1,108 @@
+---
+const FAQs = [
+    { q: "How much do you charge?", a: "Test", tags: ["Web Design"] },
+    {
+        q: "How long will it take to complete my website?",
+        a: "test",
+        tags: ["Web Design"],
+    },
+    {
+        q: "Do I have to be in Pittsburgh to work with you?",
+        a: "test",
+        tags: ["Web Design"],
+    },
+    {
+        q: "Will I be able to update the site myself when it’s finished?",
+        a: "",
+        tags: ["Web Design"],
+    },
+    { q: "Will you maintain our website for us?", a: "", tags: ["Web Design"] },
+    {
+        q: "Do you provide website hosting and domain?",
+        a: "",
+        tags: ["Web Design"],
+    },
+    { q: "Will my website be mobile-friendly?", a: "", tags: ["Web Design"] },
+    {
+        q: "How much input do I have in the website design process?",
+        a: "",
+        tags: ["Web Design"],
+    },
+    {
+        q: "Who writes the text/content for the website?",
+        a: "",
+        tags: ["Web Design"],
+    },
+    {
+        q: "Can you work with WordPress/Website Builders?",
+        a: "",
+        tags: ["Web Design"],
+    },
+    {
+        q: "What if I need help on my site down the road?",
+        a: "",
+        tags: ["Web Design"],
+    },
+    { q: "Is SEO included in my website build?", a: "", tags: ["Web Design"] },
+    {
+        q: "Do you work with new and small businesses?",
+        a: "",
+        tags: ["Web Design"],
+    },
+    { q: "What forms of payments do you accept?", a: "", tags: ["Web Design"] },
+    { q: "How do we get started?", a: "", tags: ["Web Design"] },
+    { q: "What is SEO?", a: "", tags: ["SEO"] },
+    { q: "How much does SEO cost?", a: "", tags: ["SEO"] },
+    { q: "How long does SEO take?", a: "", tags: ["SEO"] },
+];
+const { filter } = Astro.props;
+---
+
+<section class="bg-white px-10">
+    <h2 class="h2 text-center py-8">Frequently Asked Questions</h2>
+    <div class="wrapper flex justify-between">
+        <div>
+        <ul
+            id="FAQIndex"
+            class="border border-black sticky top-24 text-lg px-8 bg-dark-gray py-5 rounded-2xl"
+        >
+            {
+                FAQs.map((FAQ) => {
+                    if (FAQ.tags.includes(filter)) {
+                        return (
+                            <li class="py-1">
+                                <a class="text-white" href={`#${FAQ.q}`}>{FAQ.q}</a>
+                            </li>
+                        );
+                    }
+                })
+            }
+        </ul></div>
+        <ul id="FAQ" class="w-1/2">
+            {
+                FAQs.map((FAQ) => {
+                    if (FAQ.tags.includes(filter)) {
+                        return (
+                            <li id={FAQ.q} class="py-8">
+                                <h3 class="h3">{FAQ.q}</h3>
+                                <p>
+                                    {FAQ.a == ""
+                                        ? "Fanny pack blackbird spyplane bicycle rights +1 migas distillery seitan swag mumblecore yuccie kombucha williamsburg. Gentrify pitchfork fam authentic godard drinking vinegar. Fanny pack bruh blackbird spyplane palo santo biodiesel YOLO. Live-edge iPhone cliche franzen. Ascot chartreuse banjo mumblecore, pickled ennui taxidermy yuccie bruh hammock sus wayfarers everyday carry typewriter. Wolf organic occupy vibecession cliche, marfa poke affogato selvage typewriter."
+                                        : FAQ.a}
+                                </p>
+                            </li>
+                        );
+                    }
+                })
+            }
+        </ul>
+    </div>
+</section>
+<style>
+    html {
+        scroll-behavior: smooth;
+
+        scroll-padding-top: 80px;
+        scroll-padding-bottom:80px;
+    }
+</style>

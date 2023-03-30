@@ -52,13 +52,13 @@ const navLogo = "/images/logo-no-background.svg";
         <a id="first" href="/">Home</a>
       </li>
       <li class="navLi delay-100">
-        <a href="/#about">About</a>
+        <a href="/about">About</a>
       </li>
       <li class="navLi delay-150">
         <a href="/services">Services</a>
       </li>
       <li class="navLi delay-200">
-        <a href="/#contactSection">Contact</a>
+        <a href="/contact">Contact</a>
       </li>
       <li class="navLi animate">
         <a href="tel:4124051059" class="whitespace-nowrap font-title bg-accent-blue md:rounded-full px-5 py-3 text-offBlack hover:bg-blue-500 hover:text-white active:bg-blue-700 w-full"
@@ -70,12 +70,7 @@ const navLogo = "/images/logo-no-background.svg";
     </ul>
   </nav>
 
-  <!-- {hamburgerOpen && (
-        <HamburgerMenu
-          hamburgerOpen={hamburgerOpen}
-          setHamburgerOpen={setHamburgerOpen}
-        />
-      )} -->
+
 </header>
 
 <style>
@@ -154,4 +149,28 @@ const navLogo = "/images/logo-no-background.svg";
     toggleHambuger(true);
   }
   window.onresize = windowResized;
+</script>
+
+<script>
+  //navbar change intersection observer
+  const threshold = 0.2;
+  const rootMargin = "-20% 0% 0% 0%";
+  const heroSection = document.querySelector("#top");
+  const navbar = document.querySelector("#nav");
+  const heroObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          navbar.classList.add("navChange");
+          console.log("not intersecting");
+        } else {
+          navbar.classList.remove("navChange");
+          console.log("intersecting");
+        }
+      });
+    },
+    { threshold: threshold, rootMargin: rootMargin }
+  );
+
+  heroObserver.observe(heroSection);
 </script>

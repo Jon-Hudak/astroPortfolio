@@ -1,0 +1,27 @@
+---
+import ServicesLayout from "../layouts/ServicesLayout.astro";
+import {cities} from "../utils/cities"
+import slugify from "../utils/slugify"
+export function getStaticPaths() {
+    
+// "ECommerceWebDevelopment", "SEO"
+    return cities.map((city) => {
+         
+        //let seo=`${city.toLowerCase()}-Web Development}`
+        
+        console.log(city);
+        return {
+            params: { webDev: slugify(`${city} Web Development`)},
+            props:{city:city} 
+        };
+         
+    });
+}
+
+const { webDev } = Astro.params;
+const {city}=Astro.props;
+
+---
+<ServicesLayout>
+<section class="pt-36 text-white"> ;lkasjdf;lkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyasjdf;lkj;laskdjf{webDev.toUpperCase()} {city}!</section>
+</ServicesLayout>

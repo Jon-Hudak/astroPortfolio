@@ -60,7 +60,7 @@ const socialImg = new URL(ogImg, Astro.site)
         > | <a class="text-white" href="mailto:jon@jonhudak.dev"
           >jon@jonhudak.dev</a>
       </p>
-      <p class="mt-auto py-3">
+      <p class="mt-auto py-3 px-5">
         &copy; {year} Jon Hudak Web Development
       </p>
     </footer>
@@ -68,29 +68,7 @@ const socialImg = new URL(ogImg, Astro.site)
   </body>
 </html>
 
-<script>
-  //navbar change intersection observer
-  const threshold = 0.2;
-  const rootMargin = "0% 0% 0% 50%";
-  const heroSection = document.querySelector("#top");
-  const navbar = document.querySelector("#nav");
-  const heroObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          navbar.classList.add("navChange");
-          console.log("not intersecting");
-        } else {
-          navbar.classList.remove("navChange");
-          console.log("intersecting");
-        }
-      });
-    },
-    { threshold: threshold, rootMargin: rootMargin }
-  );
 
-  heroObserver.observe(heroSection);
-</script>
 
 <style is:global>
   /* .resize-animation-stopper * {
@@ -106,6 +84,9 @@ const socialImg = new URL(ogImg, Astro.site)
   }
   .formLabel {
     @apply text-2xl py-2;
+  }
+  .h1{
+    @apply text-6xl font-title text-black text-center
   }
   .h2 {
     @apply font-thin  text-5xl sm:text-5xl leading-snug;
@@ -131,6 +112,7 @@ const socialImg = new URL(ogImg, Astro.site)
     filter: drop-shadow(-1px 2px 3px black);
   }
   a {
+    scroll-margin-top: 1000px;
     @apply text-blue-600 hover:text-blue-800 underline;
   }
 
@@ -146,6 +128,7 @@ const socialImg = new URL(ogImg, Astro.site)
     transform: translateY(0px);
     transition: opacity 2s, transform 2s;
   }
+ 
 </style>
 <script>
   import observer from "../utils/observer";
