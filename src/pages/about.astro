@@ -1,6 +1,8 @@
 ---
+import Contact from "../components/Contact.astro";
 import FAQ from "../components/FAQ.astro";
 import H1 from "../components/H1.astro";
+import ThreeCards from "../components/ThreeCards.astro";
 import Layout from "../layouts/Layout.astro";
 
 const glitchPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
@@ -9,7 +11,7 @@ const glitchPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
 <Layout>
     <H1 classes="">Pittsburgh Website Developer</H1>
     <section
-        class="pt-8 text-white flex flex-col-reverse md:flex-row relative justify-between place-items-center"
+        class="pt-8 text-whit bg-white flex flex-col-reverse md:flex-row relative justify-between place-items-center"
     >
         <article class="px-8 md:w-1/2">
             <h2 class="h2 mt-8">About Jon</h2>
@@ -64,7 +66,9 @@ const glitchPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
             </video>
         </div>
     </section>
+    
     <FAQ filter="Web Design"/>
+    <Contact />
 </Layout>
 
 <style>
@@ -73,10 +77,11 @@ const glitchPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
     }
 </style>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&text="JonHudak"');
 
     .signature{
         font-family:  'Birthstone Bounce', cursive;
         transform:rotate(-5deg);
     }
+    
     </style>
