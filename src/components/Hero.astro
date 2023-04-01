@@ -2,7 +2,9 @@
 let contactOpen = false;
 
 const heroPic = "/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
+const { city, h1, h2, buttonText } = Astro.props;
 ---
+
 <section
   id="top"
   class="flex flex-col-reverse lg:flex-row pt-32 pb-12 lg:pb-0 px-0 lg:pl-10 place-items-center justify-between lg:h-[800px] overflow-hidden bg-gradient-to-b from-dark-gray to-neutral-700"
@@ -14,20 +16,21 @@ const heroPic = "/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
     <h1
       class="mt-5 text-4xl sm:text-5xl pb-5 text-center lg:text-center select-none text-white font-title"
     >
-      Pittsburgh <strong class="font-normal text-accent-blue">Web Developer</strong>
+      {city} <strong class="font-normal text-accent-blue"
+        >{h1}</strong
+      >
     </h1>
     <h2 class="font-sans mt-5 text-xl sm:text-2xl text-center text-white mx-8">
-      Custom website design for small businesses in the Pittsburgh area with a
-      focus on SEO.
+      {h2}
     </h2>
 
-    <button
+    <a href="/contact-pittsburgh-web-developer"
       class={`relative py-6 px-6 mt-10 mx-2 lg:w-auto sm:mx-auto button ${
         contactOpen ? "bg-sky-600" : "bg-accent-blue"
       }`}
     >
-      Free Web Design Consultation
-    </button>
+      {buttonText}
+    </a>
   </div>
   <div class="lg:w-1/2 flex place-content-center lg:place-content-end">
     <video
@@ -38,7 +41,6 @@ const heroPic = "/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
       loop
       muted
       playsInline
-      
     >
       <source src={heroPic} type="video/webm" />
       This animation doesn't work on your browser. Let me know so I can fix it!

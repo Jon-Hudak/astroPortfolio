@@ -1,0 +1,103 @@
+---
+import H1 from "./H1.astro";
+
+const { service } = Astro.props;
+const packages = {
+    bronze: [
+        "Custom-designed homepage",
+
+        "Up to 3 pages of content",
+        "Site Analytics",
+        "Mobile-friendly design",
+        "Basic website accessibility",
+        "Basic SEO setup",
+        "Contact form integration",
+        "Domain and hosting setup",
+        "2 rounds of revisions",
+        "Basic website training and documentation",
+    ],
+    silver: [
+        "Custom-designed homepage",
+        "Up to 10 pages of content",
+        "Site Analytics",
+        "Mobile-friendly design",
+        "Basic website accessibility audit",
+        "Custom blog setup and integration",
+        "Basic SEO setup",
+        "Content management system (CMS) integration",
+        "Simple E-commerce (products with no or consistent variations)",
+        "3 rounds of revisions",
+        "Advanced website training (video tutorials or in-person training)",
+    ],
+    gold: [
+        "Custom-designed homepage",
+        "Up to 20 pages of content",
+        "Site Analytics",
+        "Mobile-friendly design",
+        "Website accessibility audit",
+        "Custom blog setup and integration",
+        "Advanced SEO setup",
+        "Content management system (CMS) integration",
+        "Advanced E-commerce (products with multiple variations)",
+        "Unlimited rounds of revisions",
+        "Advanced website training (video tutorials or in-person training)",
+    ],
+};
+---
+
+<section class="dark">
+    <h2 class="h2 text-center py-16">{service} Pricing</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 place-items-center">
+        <article class="priceCard">
+            <div><h3 class="font-title text-4xl text-center py-8">Bronze</h3>
+            <ul class="">
+                {packages.bronze.map((item) => <li>{item}</li>)}
+            </ul></div>
+            <div class="grid grid-cols-2 sm:my-10">
+                <span class="text-4xl px-5">$1499*</span><p class="">
+                    *Estimate based on a standard 3 page website
+                </p>
+            </div>
+        </article>
+        <article class="priceCard featured">
+            <span
+                class="absolute top-10 -right-16 bg-offBlack text-accent-blue w-56 rotate-45 text-center text-xl py-1 tracking-wider"
+                >Popular</span
+            >
+           <div> <h3 class="font-title text-4xl text-center py-8">Silver</h3>
+            <ul class="">
+                {packages.silver.map((item) => <li>{item}</li>)}
+            </ul></div>
+            <div class="grid grid-cols-2 sm:my-10">
+                <span class="text-4xl px-5">$2299*</span><p class="">
+                    *Estimate based on a standard 3 page website
+                </p>
+            </div>
+        </article>
+        <article class="priceCard">
+            <div><h3 class="font-title text-4xl text-center py-8">Gold</h3>
+            <ul class="">
+                {packages.gold.map((item) => <li>{item}</li>)}
+            </ul></div>
+            <div class="grid grid-cols-2 my-10 sm:my-0">
+                <span class="text-4xl px-5">$3999*</span><p class="">
+                    *Estimate based on a standard 3 page website
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+<style>
+    .priceCard {
+        @apply bg-accent-blue text-black w-full  xl:w-96 py-5 md:h-[640px] relative flex flex-col justify-between rounded-xl shrink;
+    }
+    .priceCard.featured {
+        @apply bg-accent-orange md:h-[700px] z-10 overflow-hidden;
+    }
+    .priceCard li{
+        @apply pt-1;
+    }
+    .priceCard ul{
+        @apply list-disc mx-auto px-8 lg:px-12 w-full;
+    }
+</style>

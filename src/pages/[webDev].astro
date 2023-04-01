@@ -3,8 +3,10 @@ import Contact from "../components/Contact.astro";
 import H1 from "../components/H1.astro";
 import Hero from "../components/Hero.astro";
 import InfoSection from "../components/InfoSection.astro";
+import Pricing from "../components/Pricing.astro";
 import Services from "../components/Services.astro";
 import Testimonials from "../components/Testimonials.astro";
+import ThreeCards from "../components/ThreeCards.astro";
 import Layout from "../layouts/Layout.astro";
 import { cities } from "../utils/cities";
 import slugify from "../utils/slugify";
@@ -15,7 +17,7 @@ export function getStaticPaths() {
 
         console.log(city);
         return {
-            params: { webDev: slugify(`${city} Web Development`) },
+            params: { webDev: slugify(`${city} web development`) },
             props: { city: city },
         };
     });
@@ -23,11 +25,28 @@ export function getStaticPaths() {
 
 const { webDev } = Astro.params;
 const { city } = Astro.props;
+const cards = [
+    {
+        cardTitle: "Discover",
+        cardText:
+            "A 30-60 minute call where we find out what your business needs are. Here we determine the scope of the project as well as figure out the timeframe and the estimated cost. We can also discuss potential road blocks and solutions to those problems.",
+    },
+    {
+        cardTitle: "Design",
+        cardText:
+            "I take the information from the discovery call to create a mock-up of your site using Figma. After a few rounds of revisions, we finalize the look of your new site. Changes after this step may require extra time and an increase in the estimated price.",
+    },
+    {
+        cardTitle: "Develop",
+        cardText:
+            "I build your new site using the mock-up as a road map. I'll thoroughly test all functions to make sure everything works. Simple changes can be made at this point. After you sign off on the site, I transfer ownership to you and everyone cheers!",
+    },
+];
 ---
 
 <Layout>
     <H1 class="h1">{city} Web Design</H1>
-    <section class="text-white">
-        
-    </section>
+    
+    <ThreeCards cards={cards} />
+    <Pricing service="Web Design"/>
 </Layout>
