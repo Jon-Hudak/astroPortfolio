@@ -3,8 +3,9 @@ import "../styles/global.css";
 import "@fontsource/aldrich";
 import { Icon } from "astro-icon";
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
-const year = new Date().getFullYear();
+
 
 let showToTop = false;
 // let lastYPos = 0;
@@ -50,20 +51,7 @@ const socialImg = new URL(ogImg, Astro.site)
     <main class="">
       <slot />
     </main>
-    <footer
-      class={`p-3 min-h-20 flex flex-col sm:flex-row text-center justify-between place-items-center border-t-2 border-gray-600 bg-offBlack text-white z-40 ${footerClass} mt-auto w-screen`}
-    >
-      <p>
-        Jon Hudak | Elizabeth, PA | <a
-          href="tel:412-405-1059"
-          class="text-white">412-405-1059</a
-        > | <a class="text-white" href="mailto:jon@jonhudak.dev"
-          >jon@jonhudak.dev</a>
-      </p>
-      <p class="mt-auto py-3 px-5">
-        &copy; {year} Jon Hudak Web Development
-      </p>
-    </footer>
+   <Footer/>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script> -->
   </body>
 </html>
@@ -79,12 +67,7 @@ const socialImg = new URL(ogImg, Astro.site)
   html {
     @apply bg-dark-gray focus:outline-none focus:ring focus:ring-accent-orange ring-inset;
   }
-  .inputField {
-    @apply text-black px-3 py-2 mt-3 text-xl w-full bg-blue-50 focus:bg-blue-200 border-2 border-blue-500 outline-double outline-4 outline-neutral-700 rounded-2xl;
-  }
-  .formLabel {
-    @apply text-2xl py-2;
-  }
+ 
   .h1{
     @apply text-6xl font-title text-black text-center
   }
