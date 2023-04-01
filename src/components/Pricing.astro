@@ -45,16 +45,16 @@ const packages = {
 };
 ---
 
-<section class="dark">
+<section class="dark pb-16">
     <h2 class="h2 text-center py-16">{service} Pricing</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 place-items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4">
         <article class="priceCard">
-            <div><h3 class="font-title text-4xl text-center py-8">Bronze</h3>
+            <div><h3 class="">Bronze</h3>
             <ul class="">
                 {packages.bronze.map((item) => <li>{item}</li>)}
             </ul></div>
-            <div class="grid grid-cols-2 sm:my-10">
-                <span class="text-4xl px-5">$1499*</span><p class="">
+            <div class="grid grid-cols-2 mt-10 px-5">
+                <span class="text-4xl ">$1499*</span><p class="">
                     *Estimate based on a standard 3 page website
                 </p>
             </div>
@@ -64,23 +64,23 @@ const packages = {
                 class="absolute top-10 -right-16 bg-offBlack text-accent-blue w-56 rotate-45 text-center text-xl py-1 tracking-wider"
                 >Popular</span
             >
-           <div> <h3 class="font-title text-4xl text-center py-8">Silver</h3>
+           <div> <h3 class="">Silver</h3>
             <ul class="">
                 {packages.silver.map((item) => <li>{item}</li>)}
             </ul></div>
-            <div class="grid grid-cols-2 sm:my-10">
-                <span class="text-4xl px-5">$2299*</span><p class="">
+            <div class="grid grid-cols-2 mt-10 px-5">
+                <span class="text-4xl ">$2299*</span><p class="">
                     *Estimate based on a standard 3 page website
                 </p>
             </div>
         </article>
-        <article class="priceCard">
-            <div><h3 class="font-title text-4xl text-center py-8">Gold</h3>
+        <article class="priceCard md:col-span-2 lg:col-span-1">
+            <div><h3 class="">Gold</h3>
             <ul class="">
                 {packages.gold.map((item) => <li>{item}</li>)}
             </ul></div>
-            <div class="grid grid-cols-2 my-10 sm:my-0">
-                <span class="text-4xl px-5">$3999*</span><p class="">
+            <div class="grid grid-cols-2 mt-10 px-5">
+                <span class="text-4xl ">$3999*</span><p class="">
                     *Estimate based on a standard 3 page website
                 </p>
             </div>
@@ -89,15 +89,18 @@ const packages = {
 </section>
 <style>
     .priceCard {
-        @apply bg-accent-blue text-black w-full  xl:w-96 py-5 md:h-[640px] relative flex flex-col justify-between rounded-xl shrink;
+        @apply bg-accent-blue text-black w-full  xl:w-[27rem] py-5 h-full lg:h-[640px] relative flex flex-col justify-between rounded-xl shrink;
     }
     .priceCard.featured {
-        @apply bg-accent-orange md:h-[700px] z-10 overflow-hidden;
+        @apply bg-accent-orange h-full lg:h-[700px] z-10 overflow-hidden;
     }
     .priceCard li{
         @apply pt-1;
     }
     .priceCard ul{
-        @apply list-disc mx-auto px-8 lg:px-12 w-full;
+        @apply list-disc mx-auto px-8 xl:px-12 w-full;
+    }
+    .priceCard h3{
+        @apply font-title text-4xl text-center py-10;
     }
 </style>

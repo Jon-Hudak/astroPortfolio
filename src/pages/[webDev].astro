@@ -1,5 +1,6 @@
 ---
 import Contact from "../components/Contact.astro";
+import FAQ from "../components/FAQ.astro";
 import H1 from "../components/H1.astro";
 import Hero from "../components/Hero.astro";
 import InfoSection from "../components/InfoSection.astro";
@@ -47,6 +48,8 @@ const cards = [
 <Layout>
     <H1 class="h1">{city} Web Design</H1>
     
-    <ThreeCards cards={cards} />
     <Pricing service="Web Design"/>
+    <ThreeCards cards={cards} />
+    <FAQ filter="Web Design"/>
+    <Contact />
 </Layout>
