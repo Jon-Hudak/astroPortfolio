@@ -1,0 +1,24 @@
+---
+import H1 from "../components/H1.astro";
+import Layout from "../layouts/Layout.astro";
+
+
+---
+<Layout>
+    
+    <H1>
+        Thank you!
+    </H1>
+    <div class="flex h-fll flex-col bg-white h-[2000px]">
+    <p class="light bg-white text-center text-3xl py-16">
+        Your form has been submitted. I'll get back to you as soon as possible!
+    </p></div>
+</Layout>
+<style is:global>
+    header nav{
+       @apply bg-dark-gray !important;
+    }
+    body{
+        @apply bg-white;
+    }
+</style>
