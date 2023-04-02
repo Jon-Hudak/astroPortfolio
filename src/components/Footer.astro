@@ -5,13 +5,13 @@ const navLogo = "/images/logo-no-background.svg";
 ---
 
 <footer
-    class={`p-3   min-h-20 text-center justify-between place-items-center border-t-2 border-gray-600 bg-offBlack text-white z-40 ${footerClass} mt-auto w-full`}
+    class={`p-3 min-h-20 text-center justify-between place-items-center border-t-2 border-gray-600 bg-offBlack text-white z-40 ${footerClass} mt-auto w-full`}
 >
     <div class="grid grid-cols-1 md:grid-cols-2 justify-between">
         <div
-            class="flex md:flex-col w-full px-5 place-items-center justify-between md:justify-start md:place-items-start"
+            class="flex gap-12 w-full place-items-center justify-between md:justify-start md:place-items-start py-8 my-auto"
         >
-            <img class="py-8 w-64 mx-auto md:mx-0" alt="logo" src={navLogo} />
+            <img class="w-64 mx-auto md:mx-0" alt="logo" src={navLogo} />
             <ul class="text-left font-semibold underline mx-auto md:mx-0">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Me</a></li>
@@ -25,25 +25,16 @@ const navLogo = "/images/logo-no-background.svg";
         </div>
         <form
             name="Newsletter"
-            class="dark w-full flex flex-col px-5 my-5 sm:bg-gradient-to-b from-offBlack/30 to-offBlack/70 sm:text-white rounded-2xl text-left ml-auto"
+            class="dark w-full flex flex-col px-5 my-1 mb-5 py-5 sm:bg-gradient-to-b from-offBlack/30 to-offBlack/70 sm:text-white rounded-2xl text-left ml-auto max-w-md"
             method="POST"
             data-netlify="true"
             netlify
             data-netlify-honeypot="bot-field"
         >
-            <h2 class="h3 py-6 text-center">Sign Up for My Newsletter</h2>
+            <h2 class="font-title text-xl text-center">Sign Up for My Newsletter</h2>
             <input name="bot-field" class="hidden" />
             <input type="hidden" name="form-name" value="Newsletter" />
-            <label class="relative" for="name"
-                ><span class="text-red-500 absolute -left-3">*</span> Name:</label
-            >
-            <input
-                required
-                name="name"
-                type="text"
-                placeholder="Matthew Mercer"
-            />
-
+            
             <label class="relative" for="email"
                 ><span class="text-red-500 absolute -left-3">*</span> Email:
             </label>
@@ -52,21 +43,16 @@ const navLogo = "/images/logo-no-background.svg";
                 id="email"
                 name="email"
                 type="email"
-                placeholder="matt@critrole.com"
+                placeholder="jon@jonhudak.dev"
             />
 
             <button
                 type="submit"
-                class="py-3 px-6 mt-10 bg-accent-blue text-offBlack w-36 rounded-full mr-auto font-bold text-lg sm:text-xl"
+                class="py-3 px-6 mt-3 bg-accent-blue text-offBlack w-full rounded-full ml-auto font-bold text-lg sm:text-xl"
             >
                 Submit
             </button>
-            <p class="text-right my-5 text-lg">
-                or email me at <a
-                    class="text-black sm:text-white font-semibold text-left"
-                    href="mailto:jon@jonhudak.dev">jon@jonhudak.dev</a
-                >
-            </p>
+           
         </form>
     </div>
     <div class="flex pt-3  gap-3 place-content-center mx-auto border-t">
@@ -86,9 +72,9 @@ const navLogo = "/images/logo-no-background.svg";
 </footer>
 <style>
     input {
-        @apply border border-accent-blue rounded-lg bg-white placeholder:text-black/60 placeholder:font-semibold px-3 py-2 text-offBlack font-semibold;
+        @apply border border-accent-blue rounded-lg bg-white placeholder:text-black/60 placeholder:font-semibold px-3 py-1 text-offBlack font-semibold;
     }
     form label{
-        @apply text-lg mt-5;
+        @apply text-lg mt-2;
     }
 </style>
