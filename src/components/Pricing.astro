@@ -1,61 +1,49 @@
 ---
 import H1 from "./H1.astro";
 
-const { service } = Astro.props;
-const packages = {
-    bronze: [
-        "Custom-designed homepage",
-
-        "Up to 3 pages of content",
-        "Site Analytics",
-        "Mobile-friendly design",
-        "Basic website accessibility",
-        "Basic SEO setup",
-        "Contact form integration",
-        "Domain and hosting setup",
-        "2 rounds of revisions",
-        "Basic website training and documentation",
-    ],
-    silver: [
-        "Custom-designed homepage",
-        "Up to 5 pages of content",
-        "Site Analytics",
-        "Mobile-friendly design",
-        "Basic website accessibility audit",
-        "Custom blog setup and integration",
-        "Basic SEO setup",
-        "Content management system (CMS) integration",
-        "Simple E-commerce (products with no or consistent variations)",
-        "3 rounds of revisions",
-        "Advanced website training (video tutorials or in-person training)",
-    ],
-    gold: [
-        "Custom-designed homepage",
-        "Up to 20 pages of content",
-        "Site Analytics",
-        "Mobile-friendly design",
-        "Website accessibility audit",
-        "Custom blog setup and integration",
-        "Advanced SEO setup",
-        "Content management system (CMS) integration",
-        "Advanced E-commerce (products with multiple variations)",
-        "Unlimited rounds of revisions",
-        "Advanced website training (video tutorials or in-person training)",
-    ],
-};
+const { service, packages } = Astro.props;
 ---
 
 <section class="dark pb-16">
     <h2 class="h2 text-center py-16">{service} Pricing</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4">
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4 px-5"
+    >
+        <!-- for SEO, add another card for "jumpstart" -->
+        {
+            packages.jumpstart && (
+                <article class="w-full col-span-1 md:col-span-2  lg:col-span-3 2xl:px-64">
+                    <div class="priceCard topCard">
+                    <div class="w-full mx-auto">
+                        <h3 class="">{service} Jumpstart</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:place-items-center md:ml-auto">
+                            {packages.jumpstart.list.map((item) => (
+                                <li class="py- w-3/5 mx-auto"><div class="">{item}</div></li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div class="flex justify-between mt-10 w-full px-5 md:px-12 gap-6">
+                        <span class="text-4xl min-w-max ">
+                            {packages.jumpstart.price}
+                            <small> {packages.jumpstart.per}</small>
+                        </span>
+                        <p class="">*{packages.jumpstart.disclaimer}</p>
+                    </div></div>
+                </article>
+            )
+        }
         <article class="priceCard">
-            <div><h3 class="">Bronze</h3>
-            <ul class="">
-                {packages.bronze.map((item) => <li>{item}</li>)}
-            </ul></div>
+            <div>
+                <h3 class="">Bronze</h3>
+                <ul class="">
+                    {packages.bronze.list.map((item) => <li>{item}</li>)}
+                </ul>
+            </div>
             <div class="grid grid-cols-2 mt-10 px-5">
-                <span class="text-4xl ">$1499*</span><p class="">
-                    *Estimate based on a standard 3 page website
+                <span class="text-4xl">{packages.bronze.price}<small> {packages.bronze.per}</small></span>
+                
+                <p class="">
+                    *{packages.bronze.disclaimer}
                 </p>
             </div>
         </article>
@@ -64,24 +52,34 @@ const packages = {
                 class="absolute top-10 -right-16 bg-offBlack text-accent-blue w-56 rotate-45 text-center text-xl py-1 tracking-wider"
                 >Popular</span
             >
-           <div> <h3 class="">Silver</h3>
-            <ul class="">
-                {packages.silver.map((item) => <li>{item}</li>)}
-            </ul></div>
+            <div>
+                <h3 class="">Silver</h3>
+                <ul class="">
+                    {packages.silver.list.map((item) => <li>{item}</li>)}
+                </ul>
+            </div>
             <div class="grid grid-cols-2 mt-10 px-5">
-                <span class="text-4xl ">$2299*</span><p class="">
-                    *Estimate based on a standard 5 page website
+                <span class="text-4xl">{packages.silver.price}<small>
+                    {packages.silver.per}</small
+                ></span><p class="">
+                    *{packages.silver.disclaimer}
                 </p>
             </div>
         </article>
         <article class="priceCard md:col-span-2 lg:col-span-1">
-            <div><h3 class="">Gold</h3>
-            <ul class="">
-                {packages.gold.map((item) => <li>{item}</li>)}
-            </ul></div>
+            <div>
+                <h3 class="">Gold</h3>
+                <ul class="">
+                    {packages.gold.list.map((item) => <li>{item}</li>)}
+                </ul>
+            </div>
             <div class="grid grid-cols-2 mt-10 px-5">
-                <span class="text-4xl ">$4999*</span><p class="">
-                    *Estimate based on a standard 20 page website
+                <span class="text-4xl">{packages.gold.price}
+                <small>
+                    {packages.gold.per}</small
+                ></span>
+                <p class="">
+                    *{packages.gold.disclaimer}
                 </p>
             </div>
         </article>
@@ -89,18 +87,24 @@ const packages = {
 </section>
 <style>
     .priceCard {
-        @apply bg-accent-blue text-black w-full  xl:w-[27rem] py-5 h-full lg:h-[640px] relative flex flex-col justify-between rounded-xl shrink;
+        @apply bg-accent-blue text-black w-full  xl:w-[27rem] py-5 h-full lg:h-[640px] relative flex flex-col justify-between rounded-xl  place-items-center;
     }
     .priceCard.featured {
         @apply bg-accent-orange h-full lg:h-[700px] z-10 overflow-hidden;
     }
-    .priceCard li{
-        @apply pt-1;
+    .priceCard.topCard {
+        @apply h-auto mb-16 w-full;
     }
-    .priceCard ul{
+    .priceCard li {
+        @apply pt-1 font-medium;
+    }
+    .priceCard ul {
         @apply list-disc mx-auto px-8 xl:px-12 w-full;
     }
-    .priceCard h3{
+    .priceCard h3 {
         @apply font-title text-4xl text-center py-10;
+    }
+    .priceCard small{
+        @apply text-base;
     }
 </style>

@@ -1,6 +1,10 @@
 ---
 const FAQs = [
-    { q: "How much do you charge?", a: "Pricing varies depending on the scope of the project. Every business is unique, so every project has different requirements. The prices shown are estimates based on the average business's needs.", tags: ["Web Design"] },
+    {
+        q: "How much do you charge?",
+        a: "Pricing varies depending on the scope of the project. Every business is unique, so every project has different requirements. The prices shown are estimates based on the average business's needs.",
+        tags: ["Web Design"],
+    },
     {
         q: "How long will it take to complete my website?",
         a: "The time it takes to complete a website depends on the complexity of the project. I can give you an estimated timeline once I understand the full scope of your project. Typically around 1-2 months. If you need a shorter timeline, let me know and we can work out a deal that works for both of us!",
@@ -10,19 +14,27 @@ const FAQs = [
         q: "Do I have to be in the Pittsburgh area to work with you?",
         a: "No, you don't have to be nearPittsburgh to work with me. We can communicate through email, phone, or video conferencing to ensure effective communication throughout the project.",
         tags: ["Web Design"],
-    },//TODO write blog about Headless CMS and link it here
+    }, //TODO write blog about Headless CMS and link it here
     {
         q: "Will I be able to update the site myself?",
         a: "To ensure the high quality of your site is maintained, I recommend you let me handle updates. If you do require updating it yourself, I can incorporate a <a target='_blank' href='https://www.contentful.com/headless-cms/'>headless CMS </a> like Wordpress or Contentful.",
         tags: ["Web Design"],
-    }, 
-    { q: "Will you maintain our website for us?", a: "Yes, I offer website maintenance packages that include regular updates, backups, and security checks to ensure your website is up-to-date and secure.", tags: ["Web Design"] },
+    },
+    {
+        q: "Will you maintain our website for us?",
+        a: "Yes, I offer website maintenance packages that include regular updates, backups, and security checks to ensure your website is up-to-date and secure.",
+        tags: ["Web Design"],
+    },
     {
         q: "Do you provide website hosting and domain?",
         a: "Yes, I offer website hosting and domain registration services as part of my web development services.",
         tags: ["Web Design"],
     },
-    { q: "Will my website be mobile-friendly?", a: "It's important for your site to be accessible on any device, not only so your customers can see it, but also because search engines will penalize you if they're not. All websites I develop are mobile-friendly and responsive.", tags: ["Web Design"] },
+    {
+        q: "Will my website be mobile-friendly?",
+        a: "It's important for your site to be accessible on any device, not only so your customers can see it, but also because search engines will penalize you if they're not. All websites I develop are mobile-friendly and responsive.",
+        tags: ["Web Design"],
+    },
     {
         q: "How much input do I have in the website design process?",
         a: "As much as you want to have! I'll work with you closely to understand your brand, goals, and preferences.",
@@ -42,19 +54,59 @@ const FAQs = [
         q: "What if I need help on my site down the road?",
         a: "I offer ongoing support for all websites I develop. If you need help down the road, I'm just a phone call or email away!",
         tags: ["Web Design"],
-    },//TODO make SEO page and link here
-    { q: "Is SEO included in my website build?", a: "SEO is a long process that entails a lot of trial and error and A/B testing. I will of course build your site with SEO best practices in mind, but if you want everything a proper SEO regimen can offer, I offer this service as an add-on.", tags: ["Web Design"] },
+    }, //TODO make SEO page and link here
+    {
+        q: "Is SEO included in my website build?",
+        a: "SEO is a long process that entails a lot of trial and error and A/B testing. I will of course build your site with SEO best practices in mind, but if you want everything a proper SEO regimen can offer, I offer this service as an add-on.",
+        tags: ["Web Design"],
+    },
     {
         q: "Do you work with new and small businesses?",
         a: "Yes, I love working with new and small businesses as much as bigger companies. I offer customized web development solutions that fit your budget and requirements.",
         tags: ["Web Design"],
     },
-    { q: "What forms of payments do you accept?", a: "I accept payments through bank transfers, credit/debit cards, checks, and PayPal.", tags: ["Web Design","SEO"] },
-    { q: "How do we get started?", a: "Simply fill out the form below or send me an <a href='mailto:jon@jonhudak.dev'>email</a>. We'll schedule a consultation to discuss your project requirements and provide a proposal from there.", tags: ["Web Design"] },
-    { q: "What is SEO?", a: "", tags: ["SEO"] },
-    { q: "How much does SEO cost?", a: "", tags: ["SEO"] },
-    { q: "How long does SEO take?", a: "", tags: ["SEO"] },
-]; 
+
+    {
+        q: "How do we get started?",
+        a: "Simply fill out the form below or send me an <a href='mailto:jon@jonhudak.dev'>email</a>. We'll schedule a consultation to discuss your project requirements and provide a proposal from there.",
+        tags: ["Web Design"],
+    },
+    {
+        q: "What is SEO?",
+        a: "SEO stands for <a target='_blank' href='https://www.semrush.com/blog/what-is-seo/'>Search Engine Optimization</a>. It is a set of practices and techniques that aim to increase the visibility and ranking of a website or web page in search engine results pages (SERPs). By optimizing various on-page and off-page factors, such as content, keywords, links, and technical aspects, SEO can help improve a website's organic traffic, user engagement, and conversion rates.",
+        tags: ["SEO"],
+    },
+    {
+        q: "How much does SEO cost?",
+        a: "The cost of SEO can vary depending on various factors, such as the size and complexity of the website, the competitiveness of the industry, the target keywords, and the scope of the project. On average, SEO services can range from a few hundred dollars to several thousand dollars per month.",
+        tags: ["SEO"],
+    },
+    {
+        q: "How long does SEO take?",
+        a: "The timeline for SEO results can vary depending on several factors, such as the current state of the website, the level of competition, the quality of the content, and the effectiveness of the optimization tactics. Generally, SEO is a long-term strategy that requires consistent effort and patience to see significant results. While some improvements can be seen within weeks or months, it may take several months or even a year to achieve noticeable improvements in rankings, traffic, and conversions. It's important to note that SEO is an ongoing process that requires continuous monitoring, tweaking, and adaptation to stay ahead of the competition and algorithm updates.",
+        tags: ["SEO"],
+    },
+    {
+        q: "What are the different types of SEO?",
+        a: "There are three main types of SEO: on-page SEO, off-page SEO, and technical SEO. On-page SEO refers to optimizing the content and structure of a website's individual pages, such as title tags, meta descriptions, headers, images, and internal links. Off-page SEO refers to promoting a website's authority and relevance through external links, social media, and other online platforms. Technical SEO refers to improving the backend structure and performance of a website, such as page speed, mobile-friendliness, crawlability, and security.",
+        tags: ["SEO"],
+    },
+    {
+        q: "What are some common SEO mistakes to avoid?",
+        a: "Some common SEO mistakes include keyword stuffing, duplicate content, poor site structure, slow page speed, broken links, irrelevant or low-quality backlinks, and ignoring user experience. It's important to follow best practices and guidelines from search engines and stay up to date with algorithm updates to avoid penalties and maintain a healthy website.",
+        tags: ["SEO"],
+    },
+    {
+        q: "What are keywords and how do they affect SEO?",
+        a: " Keywords are the words or phrases that users enter into search engines to find information or solutions. They are essential for SEO because they help search engines understand the content and intent of a web page. By strategically incorporating relevant and high-traffic keywords into the title, meta description, headings, and body of the content, website owners can improve their chances of ranking higher in relevant search results.",
+        tags: ["SEO"],
+    },
+    {
+        q: "What forms of payments do you accept?",
+        a: "I accept payments through bank transfers, credit/debit cards, checks, and PayPal. Let me know if you need to use another form of payment, and I'll see if I can make the accomodation!",
+        tags: ["Web Design", "SEO"],
+    },
+];
 
 const { filter } = Astro.props;
 ---
@@ -62,33 +114,38 @@ const { filter } = Astro.props;
 <section class="dark px-10 pb-16">
     <h2 class="h2 text-center py-16">Frequently Asked Questions</h2>
     <div class="wrapper flex flex-col lg:flex-row-reverse justify-around">
-            <div>
+        <div>
             <ul
                 id="FAQIndex"
                 class="border border-accent-blue sticky top-24 text-lg px-8 bg-dark-gray py-5 rounded-2xl"
-            ><h3 class="text-3xl pb-5 font-title">Have a question?</h3>
+            >
+                <h3 class="text-3xl pb-5 font-title">Have a question?</h3>
                 {
-                    FAQs.map((FAQ,i) => {
+                    FAQs.map((FAQ, i) => {
                         if (FAQ.tags.includes(filter)) {
                             return (
                                 <li class="py-1">
-                                    <a class="text-white hover:text-accent-blue" href={`#${i}`}>{FAQ.q}</a>
+                                    <a
+                                        class="text-white hover:text-accent-blue"
+                                        href={`#${i}`}
+                                    >
+                                        {FAQ.q}
+                                    </a>
                                 </li>
                             );
                         }
                     })
                 }
-            </ul></div>
+            </ul>
+        </div>
         <ul id="FAQ" class="lg:w-1/2">
             {
-                FAQs.map((FAQ,i) => {
+                FAQs.map((FAQ, i) => {
                     if (FAQ.tags.includes(filter)) {
                         return (
-                            <li id={i.toString()}class="py-8">
+                            <li id={i.toString()} class="py-8">
                                 <h3 class="h3">{FAQ.q}</h3>
-                                <p set:html={FAQ.a}>
-                                    
-                                </p>
+                                <p set:html={FAQ.a}></p>
                             </li>
                         );
                     }
@@ -102,9 +159,8 @@ const { filter } = Astro.props;
         scroll-behavior: smooth;
 
         scroll-padding-top: 80px;
-        
     }
-    a{
-        color:aqua;
+    a {
+        color: aqua;
     }
 </style>

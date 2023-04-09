@@ -1,7 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
-//import navLogo from "../icons/logo-no-background.svg";
 const { navbarChange } = Astro.props;
 const navLogo = "/images/logo-no-background.svg";
 const {city="pittsburgh"}=Astro.props;
@@ -11,13 +10,6 @@ const {city="pittsburgh"}=Astro.props;
   <nav id="nav" class="flex justify-between items-center px-3 md:px-1">
     <a class="h-full" href="/" aria-label="Homepage">
       <img class="h-full py-2" alt="" src={navLogo} />
-      <!-- <Icon
-          optimize
-          alt="Logo"
-          src={navLogo}
-          
-          class="h-full w-full transition duration-100 hover:grayscale hover:contrast-0"
-        /> -->
     </a>
     <button
       role="navigation"
@@ -47,7 +39,7 @@ const {city="pittsburgh"}=Astro.props;
     </button>
     <ul
       id="primary-navigation"
-      class="h-ful font-title md:px-5 translate-x-full md:translate-x-0 flex bg-offBlack/70 md:bg-transparent fixed top-0 bottom-0 left-0 sm:left-1/3 right-0 md:flex flex-col md:relative md:inset-0 md:flex-row gap-8 md:gap-5 lg:gap-10 pt-36 md:pt-0 place-items-center transition border border-neutral-500 md:border-0 rounded-l-3xl opacity-0 md:opacity-100 backdrop-blur-lg md:backdrop-blur-none"
+      class="h-ful font-title md:px-5 translate-x-full md:translate-x-0 flex bg-offBlack/70 md:bg-transparent fixed top-0 bottom-0 left-0 sm:left-1/3 right-0 md:flex flex-col md:relative md:inset-0 md:flex-row gap-8 md:gap-5 lg:gap-10 pt-36 md:pt-0 place-items-center transition border border-neutral-500 md:border-0 rounded-l-3xl opacity-0 md:opacity-100 backdrop-blur-lg md:backdrop-blur-none overflow-y-scroll md:overflow-y-hidden overflow-x-hidden"
     >
       <li class="navLi delay-50">
         <a id="first" href="/">Home</a>
@@ -69,8 +61,8 @@ const {city="pittsburgh"}=Astro.props;
           
         </ul></div> -->
       </li>
-
-      <li class="navLi delay-200">
+      <!-- <li class="navLi delay-200 group flex-col "><a href="/blog">Blog</a></li> -->
+      <li class="navLi delay-250">
         <a href="/contact-pittsburgh-web-developer">Contact</a>
       </li>
       <li class="navLi animate">
@@ -87,7 +79,7 @@ const {city="pittsburgh"}=Astro.props;
 
 <style>
   .navLi {
-    @apply h-full duration-500 translate-x-full md:translate-x-0 w-full transition cursor-pointer hover:bg-black/30 md:hover:bg-transparent invisible md:visible mx-auto flex place-content-center;
+    @apply h-full duration-500 translate-x-[10000px] md:translate-x-0 w-full transition cursor-pointer hover:bg-black/30 md:hover:bg-transparent invisible md:visible mx-auto flex place-content-center;
   }
   .navOpen,
   .navOpen > .navLi {
@@ -140,7 +132,7 @@ const {city="pittsburgh"}=Astro.props;
         li.setAttribute("visibility", "visible");
       });
 
-      console.log(navItems[0]);
+      
       document.getElementById("first").focus();
     }
   }
@@ -155,7 +147,7 @@ const {city="pittsburgh"}=Astro.props;
     if (e.target.id !== "hamburgerButton") {
       close = true;
 
-      console.log("hi", close);
+     
     }
     toggleHambuger(close);
     //if escape is pressed, force close the menu
@@ -163,7 +155,7 @@ const {city="pittsburgh"}=Astro.props;
   function windowResized() {
     toggleHambuger(true);
   }
-  window.onresize = windowResized;
+  // window.onresize = windowResized;
 </script>
 
 <script>
@@ -177,10 +169,10 @@ const {city="pittsburgh"}=Astro.props;
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
           navbar.classList.add("navChange");
-          console.log("not intersecting");
+          
         } else {
           navbar.classList.remove("navChange");
-          console.log("intersecting");
+          
         }
       });
     },

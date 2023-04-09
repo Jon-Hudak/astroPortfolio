@@ -1,5 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
+const {service="Web Design"} = Astro.props;
 ---
 
 <section class="bg-white">
@@ -15,7 +16,7 @@ import { Image } from "@astrojs/image/components";
             data-netlify-honeypot="bot-field"
         >
             <h2 class="h3 py-6 text-center">
-                Let's Talk About <strong>Website Design</strong>
+                Let's Talk About <strong>{service}</strong>
             </h2>
             <input name="bot-field" class="hidden" />
             <input type="hidden" name="form-name" value="Contact" />

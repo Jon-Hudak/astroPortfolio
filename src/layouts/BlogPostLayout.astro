@@ -1,0 +1,37 @@
+---
+import H1 from "../components/H1.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+const { title, description, date, category, author, bannerImg } = frontmatter;
+---
+
+<Layout>
+    <H1>Web Design Blog</H1>
+    <section id="blog" class="flex">
+        <article class="light">
+            <img class="w-full h-96 object-cover" src={bannerImg} />
+            <div id="blogWrapper" class="px-16">
+                <slot />
+            </div>
+        </article>
+        <aside id="related"class="w-[1000px] px-16 dark">
+            <h2 class="text-2xl">Related Blogs</h2>
+        </aside>
+    </section>
+</Layout>
+<style is:global>
+    #blog h2{
+        @apply font-semibold font-title mt-8;
+    }
+    #blog article h2 {
+        @apply text-5xl ;
+    }
+    #blog h3 {
+        @apply text-3xl font-semibold mt-8;
+    }
+    #blog p {
+        @apply mt-6 text-lg;
+    }
+   
+</style>

@@ -2,11 +2,7 @@
 import Contact from "../components/Contact.astro";
 import FAQ from "../components/FAQ.astro";
 import H1 from "../components/H1.astro";
-import Hero from "../components/Hero.astro";
-import InfoSection from "../components/InfoSection.astro";
 import Pricing from "../components/Pricing.astro";
-import Services from "../components/Services.astro";
-import Testimonials from "../components/Testimonials.astro";
 import ThreeCards from "../components/ThreeCards.astro";
 import Layout from "../layouts/Layout.astro";
 import { cities } from "../utils/cities";
@@ -16,7 +12,6 @@ export function getStaticPaths() {
     return cities.map((city) => {
         //let seo=`${city.toLowerCase()}-Web Development}`
 
-        console.log(city);
         return {
             params: { webDev: slugify(`${city} web development`) },
             props: { city: city },
@@ -43,13 +38,69 @@ const cards = [
             "I build your new site using the mock-up as a road map. I'll thoroughly test all functions to make sure everything works. Simple changes can be made at this point. After you sign off on the site, I transfer ownership to you and everyone cheers!",
     },
 ];
+const packages = {
+    bronze: {
+        price: "",
+        per: "",
+        disclaimer: "",
+        list: [
+            "Custom-designed homepage",
+            "Up to 3 pages of content",
+            "Site Analytics",
+            "Mobile-friendly design",
+            "Basic website accessibility",
+            "Basic SEO setup",
+            "Contact form integration",
+            "Domain and hosting setup",
+            "2 rounds of revisions",
+            "Basic website training and documentation",
+        ],
+    },
+    silver: {
+        price: "",
+        per: "",
+        disclaimer: "",
+        list: [
+            "Custom-designed homepage",
+            "Up to 5 pages of content",
+            "Site Analytics",
+            "Mobile-friendly design",
+            "Basic website accessibility audit",
+            "Custom blog setup and integration",
+            "Basic SEO setup",
+            "Content management system (CMS) integration",
+            "Simple E-commerce (products with no or consistent variations)",
+            "3 rounds of revisions",
+            "Advanced website training (video tutorials or in-person training)",
+        ],
+    },
+    gold: {
+        price: "",
+        per: "",
+        disclaimer: "",
+        list: [
+            "Custom-designed homepage",
+            "Up to 20 pages of content",
+            "Site Analytics",
+            "Mobile-friendly design",
+            "Website accessibility audit",
+            "Custom blog setup and integration",
+            "Advanced SEO setup",
+            "Content management system (CMS) integration",
+            "Advanced E-commerce (products with multiple variations)",
+            "Unlimited rounds of revisions",
+            "Advanced website training (video tutorials or in-person training)",
+        ],
+    },
+};
+const service = "Web Design";
 ---
 
 <Layout>
     <H1 class="h1">{city} Web Design</H1>
-    
-    <Pricing service="Web Design"/>
-    <ThreeCards cards={cards} />
-    <FAQ filter="Web Design"/>
-    <Contact />
+
+    <Pricing service={service} {packages} />
+    <ThreeCards service={service} {cards} />
+    <FAQ service={service} filter="Web Design" />
+    <Contact service={service}/>
 </Layout>
