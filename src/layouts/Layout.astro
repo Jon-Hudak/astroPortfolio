@@ -25,7 +25,7 @@ const socialImg = new URL(ogImg, Astro.site)
 
 
 ---
-<Head {title}{description}{canonicalURL}{socialImg}>
+<Head title={title} description={description} canonicalURL={canonicalURL} socialImg={socialImg}>
   <body class={`flex flex-col overflow-x-hidden min-h-screen ${background}`}>
     <Navbar navbarChange={false} />
     <main class="">
