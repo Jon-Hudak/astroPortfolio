@@ -5,36 +5,80 @@ import Layout from "../../layouts/Layout.astro";
 
 const allPosts = await Astro.glob("./*.md");
 console.log(allPosts);
+const filterDrafts = true;
+const filterFuturePosts = false;
+const currentDate = new Date();
 ---
 
 <Layout>
     <H1>Web Design Blog</H1>
-    <section class="light">
-        <div class="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 auto-rows-">
+    <section class="light pt-16">
+        <div
+            class="wrapper md:mx-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-12 auto-rows-"
+        >
             {
-                allPosts.map((post) => (
-                    
-                    <article class="blogCard flex flex-col">
-                        <Image
-                            class="w-full rounded-lg"
-                            alt=""
-                            src={post.frontmatter.bannerImg}
-                            width={400}
-                            aspectRatio="4:3"
-                            format="avif"
-                            fit="cover"
-                        />
-                        <div class="dark relative -top-16 w-4/5 mx-auto px-8 pb-8 rounded-b-3xl h-full flex flex-col justify-between">
-                            <div class="flex flex-col"><h2 class="text-center font-title text-2xl lg:text-3xl pt-8 ">
-                                {post.frontmatter.title}
-                            </h2>
-                            <p class="mt-5">{post.frontmatter.description}</p></div>
-                            <a href={post.url}class="button ml-auto mt-8 px-5 py-2"> Read the Blog</a>
-                        </div>
-                    </article>
-                ))
+                allPosts.map((post) => {
+                    let postDate = new Date(post.frontmatter.date);
+
+                    //filters drafts if option is on
+                    if (filterDrafts && post.frontmatter.draft === true) {
+                        return;
+                    }
+                    //filters posts if the date is in the future if the option is on
+                    else if (
+                        filterFuturePosts ||
+                        postDate.getTime() > currentDate.getTime()
+                    ) {
+                        return;
+                    } else {
+                        return (
+                            <a class="no-underline" href={post.url}>
+                                <article class="blogCard flex flex-col">
+                                    <Image
+                                        class="cardImg w-full rounded-lg"
+                                        alt=""
+                                        src={post.frontmatter.bannerImg}
+                                        width={600}
+                                        aspectRatio="4:3"
+                                        format="avif"
+                                        fit="cover"
+                                    />
+                                    <div class="dark relative -top-16 w-4/5 mx-auto px-8 pb-8 rounded-b-3xl h-full flex flex-col justify-between">
+                                        <div class="flex flex-col">
+                                            <h2 class="text-center font-title text-2xl md:text-lg font-bold lg:text-xl pt-8 ">
+                                                {post.frontmatter.title}
+                                            </h2>
+                                            <p class="mt-5">
+                                                {post.frontmatter.description}
+                                            </p>
+                                        </div>
+                                        <span class="button text-center lg:ml-auto mt-8 px-5 py-2">
+                                            Read the Blog
+                                        </span>
+                                    </div>
+                                </article>
+                            </a>
+                        );
+                    }
+                })
             }
         </div>
-        <aside><h2>Related Posts</h2></aside>
+
+        {
+            //TODO: related posts when more posts are added
+            false && (
+                <aside>
+                    <h2>Related Posts</h2>
+                </aside>
+            )
+        }
     </section>
 </Layout>
+<style>
+    .cardImg {
+        @apply grayscale-0 transition duration-500;
+    }
+    a:hover .cardImg {
+        @apply grayscale transition duration-500;
+    }
+</style>

@@ -77,10 +77,13 @@ const socialImg = new URL(ogImg, Astro.site)
     filter: drop-shadow(-1px 2px 3px black);
   }
   .dark a{
-    @apply text-accent-blue hover:text-accent-blue-dark underline;
+    @apply text-accent-blue hover:text-accent-blue-dark;
   }
   .light a{
-    @apply text-blue-500 hover:text-blue-800 underline;
+    @apply text-blue-500 hover:text-blue-800;
+  }
+  a{
+    @apply underline;
   }
 
   .fadeUp {
@@ -111,4 +114,16 @@ const socialImg = new URL(ogImg, Astro.site)
   const rotates = document.querySelectorAll(".rotated");
   observer(fadeUps, "animate", 0.2);
   observer(rotates, "animate");
+</script>
+<script>//any non-internal link opens in a new window
+  const internal = location.host.replace("www.","");
+  const internalRegEx= new RegExp(internal,"i");
+  const links = document.querySelectorAll("a");
+  links.forEach((link)=>{
+    let href=link.host;
+    if(!internalRegEx.test(href)){
+      link.target="_blank";
+    }
+  })
+
 </script>

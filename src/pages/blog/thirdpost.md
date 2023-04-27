@@ -4,7 +4,7 @@ title: Blog Lorem Ipsum  I'm baby waistcoat af selfies celiac raclette
 author: Jon Hudak
 category: "Test"
 date: "4/3/23"
-draft: false
+draft: true
 bannerImg: "/images/ogImg.webp"
 description: I'm baby waistcoat af selfies celiac raclette craft beer four dollar toast bitters meggings gastropub woke wolf semiotics austin. Helvetica iceland man bun polaroid distillery. Enamel pin gentrify yes plz vice tacos big mood poke small batch.
 tags:

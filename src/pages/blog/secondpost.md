@@ -3,8 +3,8 @@ layout: ../../layouts/BlogPostLayout.astro
 title: Second Blog
 author: Jon Hudak
 category: "Test"
-date: "4/3/23"
-draft: false
+date: "4/3/24"
+draft: true
 bannerImg: "/images/ogImg.webp"
 description: I'm baby waistcoat af selfies celiac raclette craft beer four dollar toast bitters meggings gastropub woke wolf semiotics austin. Helvetica iceland man bun polaroid distillery. Enamel pin gentrify yes plz vice tacos big mood poke small batch.
 tags:
