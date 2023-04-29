@@ -2,14 +2,14 @@
 import H1 from "../components/H1.astro";
 import Layout from "./Layout.astro";
 import { Image } from "@astrojs/image/components";
-const { frontmatter } = Astro.props;
+const { frontmatter,slug } = Astro.props;
 const { title, description, date, category, author, bannerImg } = frontmatter;
 const authorSlug=author.toLowerCase().replace(" ","-")
 const authorImg=`/images/${authorSlug}.jpg` 
-console.log()
+console.log(slug)
 ---
 
-<Layout>
+<Layout title={title} description={description}  socialImg={bannerImg}>
     <section id="blog" class="flex flex-col bg-neutral-100 mt-20">
         <article class="light max-w-3xl mx-auto py-5">
             <div class="titleWrapper px-3 lg:px-8">

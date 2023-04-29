@@ -8,9 +8,11 @@ console.log(allPosts);
 const filterDrafts = true;
 const filterFuturePosts = false;
 const currentDate = new Date();
+const title="Pittsburgh Web Development Blog"
+const description="Technical information and news about web development"
 ---
 
-<Layout>
+<Layout title={title} description={description}>
     <H1>Web Design Blog</H1>
     <section class="light pt-16">
         <div

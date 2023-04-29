@@ -2,9 +2,12 @@
 import Contact from "../components/Contact.astro";
 import H1 from "../components/H1.astro";
 import Layout from "../layouts/Layout.astro";
+
+const title="Contact Pittsburgh Web Developer"
+const description="Let's start a conversation about how to improve your sales with a professional website and SEO services!"
 ---
 
-<Layout>
+<Layout title={title} description={description}>
     <H1>Contact</H1>
     <section class="">
         <Contact />

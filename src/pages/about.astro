@@ -6,9 +6,11 @@ import ThreeCards from "../components/ThreeCards.astro";
 import Layout from "../layouts/Layout.astro";
 
 const glitchPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
+const title="About Jon Hudak Web Development";
+const description="Hi, I'm Jon, a local web developer from the Pittsburgh area. I'm passionate about building beautiful and functional websites that provide great user experiences.";
 ---
 
-<Layout>
+<Layout title={title} description={description}>
     <H1 classes="">Pittsburgh Website Developer</H1>
     <section
         class="pt-8 text-whit bg-white flex flex-col-reverse md:flex-row relative justify-between place-items-center"
@@ -19,7 +21,7 @@ const glitchPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
                 Hi, I'm Jon, a local web developer from the Pittsburgh area. I'm
                 passionate about building beautiful and functional websites that
                 provide great user experiences. My expertise lies in building
-                custom websites using HTML, CSS, and Javascript. While I am
+                custom, static websites using HTML, CSS, and Javascript. While I am
                 familiar and can work with tools like Wordpress and Wix, I don’t
                 find them as engaging and fun to work with.
             </p>
