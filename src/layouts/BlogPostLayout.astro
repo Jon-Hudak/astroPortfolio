@@ -2,11 +2,11 @@
 import H1 from "../components/H1.astro";
 import Layout from "./Layout.astro";
 import { Image } from "@astrojs/image/components";
-const { frontmatter,slug } = Astro.props;
+const { frontmatter} = Astro.props;
 const { title, description, date, category, author, bannerImg } = frontmatter;
 const authorSlug=author.toLowerCase().replace(" ","-")
 const authorImg=`/images/${authorSlug}.jpg` 
-console.log(slug)
+
 ---
 
 <Layout title={title} description={description}  socialImg={bannerImg}>
