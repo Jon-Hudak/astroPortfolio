@@ -17,7 +17,7 @@ const { title, description, canonicalURL, socialImg } = Astro.props;
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="canonical" href={canonicalURL} />
+        <link rel="canonical" href={Astro.url} />
         <link rel="icon" type="image/jpg" href="/favicon.jpg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
