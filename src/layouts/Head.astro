@@ -1,6 +1,5 @@
 ---
 const { title, description, canonicalURL, socialImg } = Astro.props;
-
 ---
 
 <!DOCTYPE html>
@@ -12,8 +11,7 @@ const { title, description, canonicalURL, socialImg } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={title} />
         <meta property="og:image" content={socialImg} />
-        <meta property="og:title" content="#1 Pittsburgh Web Developer" />
-        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={description} />
 
