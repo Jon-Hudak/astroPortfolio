@@ -11,15 +11,16 @@ import Head from "./Head.astro";
 let showToTop = false;
 // let lastYPos = 0;
 let navbarChange = false;
-const socialImg = new URL(ogImg, Astro.site)
+
 const {
   title = "#1 Pittsburgh Web Developer",
   description = "Custom websites for small businesses in the Greater Pittsburgh Area!",
-  ogImg = socialImg,
+  ogImg,
   url,
   footerClass,
   background,
 } = Astro.props;
+const socialImg = new URL(ogImg, Astro.site)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 
