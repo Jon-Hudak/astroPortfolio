@@ -5,7 +5,7 @@ author: Jon Hudak
 category: "Web Development"
 date: "4/24/23"
 draft: false
-bannerImg: "/images/blog/1-static-website-for-small-business.webp"
+bannerImg: "/images/blog/1-static-website-for-small-business.jpg"
 description: Are you considering a new website for your business? Find out why a static site might be the right fit for you.
 tags:
     -web design
