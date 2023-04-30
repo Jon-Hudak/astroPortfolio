@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout footerClass="fixed bottom-0">
+    <section class="mt-20 dark flex flex-col place-items-center">
+        <article class="w-[26rem] my-36 py-8 light px-5 rounded-lg">
+            <h1 class="h1">404</h1>
+            <h2 id="top" class="text-xl text-center font-bold mt-8">
+                Hmm...it seems this page doesn't exist.
+            </h2>
+            <p class="mt-8">
+                If you think something should be here, please <a href="mailto:jon@jonhudak.dev">send me an email</a> so I can fix it in the future! Otherwise click one of the links below to go back home or to your previous page. 
+            </p>
+            <span class="flex justify-between mt-10"><a class="button py-2 px-5" href="/">Home</a> <button onclick="history.back()" id="back" type="button" class="button py-2- px-5">Back</button></span>
+        </article>
+    </section>
+</Layout>
