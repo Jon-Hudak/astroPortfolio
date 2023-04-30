@@ -19,6 +19,7 @@ const {
   url,
   footerClass,
   background,
+  city
 } = Astro.props;
 const socialImg = new URL(ogImg, Astro.site)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -28,7 +29,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <Head title={title} description={description} canonicalURL={canonicalURL} socialImg={ogImg}>
   <body class={`flex flex-col overflow-x-hidden min-h-screen ${background}`}>
-    <Navbar navbarChange={false} />
+    <Navbar city={city} navbarChange={false} />
     <main class="">
       <slot />
     </main>

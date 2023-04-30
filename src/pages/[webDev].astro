@@ -94,9 +94,11 @@ const packages = {
     },
 };
 const service = "Web Design";
+const title= `Best ${city} Web Design`;
+const description=`Get a fast, secure website that your customers will adore.`
 ---
 
-<Layout>
+<Layout title={title} description={description} city={city.toLowerCase()}>
     <H1 class="h1">{city} Web Design</H1>
 
     <Pricing service={service} {packages} />

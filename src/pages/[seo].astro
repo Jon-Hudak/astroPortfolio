@@ -113,9 +113,13 @@ const packages = {
     },
 };
 const service = "SEO";
+const title= `Best ${city} SEO`;
+const description=`Get found on Google with proper Search Engine Optimization`
+
+
 ---
 
-<Layout>
+<Layout title={title} description={description} city={city.toLowerCase()}>
     <H1 class="h1">{city} SEO</H1>
 
     <Pricing service={service} packages={packages} />
