@@ -11,21 +11,21 @@ import Head from "./Head.astro";
 let showToTop = false;
 // let lastYPos = 0;
 let navbarChange = false;
-
+const socialImg = new URL(ogImg, Astro.site)
 const {
   title = "#1 Pittsburgh Web Developer",
   description = "Custom websites for small businesses in the Greater Pittsburgh Area!",
-  ogImg = "/images/ogImg.jpg",
+  ogImg = socialImg,
   url,
   footerClass,
   background,
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImg = new URL(ogImg, Astro.site)
+
 
 
 ---
-<Head title={title} description={description} canonicalURL={canonicalURL} socialImg={socialImg}>
+<Head title={title} description={description} canonicalURL={canonicalURL} socialImg={ogImg}>
   <body class={`flex flex-col overflow-x-hidden min-h-screen ${background}`}>
     <Navbar navbarChange={false} />
     <main class="">
