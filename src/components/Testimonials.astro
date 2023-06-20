@@ -85,12 +85,12 @@ const testimonials = await getCollection("testimonials");
     </div>
 </section>
 
-<style>
+<style is:global>
     .quotebox p {
         @apply leading-snug mt-3 font-thin text-xl md:text-4xl;
     }
     .quotebox strong {
-        @apply font-bold text-white;
+        @apply font-semibold text-accent-blue;
     }
     .fadeUp {
         opacity: 0.1;
