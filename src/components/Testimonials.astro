@@ -2,7 +2,7 @@
 import { Image, Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 import { getCollection } from "astro:content";
-
+const { isFullLength = false } = Astro.props;
 const testimonials = await getCollection("testimonials");
 ---
 
@@ -10,50 +10,79 @@ const testimonials = await getCollection("testimonials");
     <h2 class="h2 px-5">Testimonials</h2>
     <!-- {JSON.stringify(testimonials)} -->
     <div class="container px-5 mx-auto">
-    {
-        testimonials.map((item) => (
-            <article class="py-10 flex shrink-0 gap-6 flex-col md:flex-row md:even:flex-row-reverse max-w-7xl mx-auto">
-                <div
-                    id="testiInfo"
-                    class="flex md:flex-col align place-content-center lg:place-content-start shrink-0 text-center gap-10 md:gap-5"
+        {
+            testimonials.map((item) => (
+                <article
+                    id={item.data.company.replaceAll(" ", "")}
+                    class="py-10 flex shrink-0 gap-6 flex-col md:flex-row md:even:flex-row-reverse max-w-7xl mx-auto"
                 >
-                    <a href={item.data.link} class="">
-                        <Image
-                            class="rounded-full border border-accent-blue h-32 w-32"
-                            alt="face"
-                            src={item.data.image1}
-                            width={200}
-                            aspectRatio="1:1"
-                            format="webp"
-                        />
-                    </a>
-                    <div class="flex flex-col place-content-center">
-                        <h3 class="text-2xl text-accent-blue font-bold">
-                            {item.data.name}
-                        </h3>
-                        <p>{item.data.title}</p>
-                        <a class="text-white" href={item.data.link}>
-                            {item.data.company}
+                    <div
+                        id="testiInfo"
+                        class="flex md:flex-col align place-content-center lg:place-content-start shrink-0 text-center gap-10 md:gap-5"
+                    >
+                        <a href={item.data.link} class="mx-auto">
+                            <Image
+                                class="rounded-full border border-accent-blue h-32 w-32"
+                                alt={item.data.name}
+                                src={item.data.image1}
+                                width={200}
+                                aspectRatio="1:1"
+                                format="webp"
+                            />
                         </a>
+                        <div class="flex flex-col place-content-center">
+                            <h3 class="text-2xl text-accent-blue font-bold">
+                                {item.data.name}
+                            </h3>
+                            <p>{item.data.title}</p>
+                            <a class="text-white" href={item.data.link}>
+                                {item.data.company}
+                            </a>
+                            {!isFullLength && (
+                                <a
+                                    class="text-sm mt-5"
+                                    href={`/testimonials#${item.data.company.replaceAll(
+                                        " ",
+                                        ""
+                                    )}`}
+                                >
+                                    Full Review
+                                </a>
+                            )}
+                        </div>
                     </div>
-                </div>
-                <div
-                    id="testiBody"
-                    class="text-3xl font-thin flex md:px-10 quotebox"
-                >
-                    <span class="fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-start">
-                        <Icon class="rotate-180" name="quote" />
-                    </span>
-                    <p class="px-8">
-                        <span class="" set:html={item.data.excerpt} />
-                    </p>
-                    <span class="fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-end">
-                        <Icon name="quote" />
-                    </span>
-                </div>
-            </article>
-        ))
-    }</div>
+                    <div
+                        id="testiBody"
+                        class="text-3xl font-thin flex md:px-10 quotebox"
+                    >
+                        {
+                            <span
+                                class={`fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-start ${
+                                    isFullLength ? "hidden lg:inline" : ""
+                                }`}
+                            >
+                                <Icon class="rotate-180" name="quote" />
+                            </span>
+                        }
+                        <div
+                            class="px-8"
+                            set:html={
+                                isFullLength ? item.body : item.data.excerpt
+                            }
+                        ></div>
+
+                        <span
+                            class={`fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-end ${
+                                isFullLength ? "hidden lg:inline" : ""
+                            }`}
+                        >
+                            <Icon name="quote" />
+                        </span>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
 </section>
 
 <style>

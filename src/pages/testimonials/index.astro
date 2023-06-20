@@ -1,0 +1,15 @@
+---
+import Testimonials from "../../components/Testimonials.astro";
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout>
+    <div class="py-16">
+    <Testimonials isFullLength={true}/>
+</div>
+</Layout>
+<style is:global>
+    .quotebox p{
+    @apply mt-8
+    }
+</style>
