@@ -24,7 +24,7 @@ const { service, packages } = Astro.props;
                     </div>
                     <div class="flex justify-between mt-10 w-full px-5 md:px-12 gap-6">
                         <span class="text-4xl min-w-max ">
-                            {packages.jumpstart.price}
+                            ${packages.jumpstart.price}
                             <small> {packages.jumpstart.per}</small>
                         </span>
                         <p class="">*{packages.jumpstart.disclaimer}</p>
@@ -40,7 +40,7 @@ const { service, packages } = Astro.props;
                 </ul>
             </div>
             <div class="grid grid-cols-2 mt-10 px-5">
-                <span class="text-4xl">{packages.bronze.price}<small> {packages.bronze.per}</small></span>
+                <span class="text-4xl">${packages.bronze.price}<small> {packages.bronze.per}</small></span>
                 
                 <p class="">
                     *{packages.bronze.disclaimer} 
@@ -59,7 +59,7 @@ const { service, packages } = Astro.props;
                 </ul>
             </div>
             <div class="grid grid-cols-2 mt-10 px-5">
-                <span class="text-4xl">{packages.silver.price}<small>
+                <span class="text-4xl">${packages.silver.price}<small>
                     {packages.silver.per}</small
                 ></span><p class="">
                     *{packages.silver.disclaimer}
@@ -74,7 +74,7 @@ const { service, packages } = Astro.props;
                 </ul>
             </div>
             <div class="grid grid-cols-2 mt-10 px-5">
-                <span class="text-4xl">{packages.gold.price}
+                <span class="text-4xl">${packages.gold.price}
                 <small>
                     {packages.gold.per}</small
                 ></span>
