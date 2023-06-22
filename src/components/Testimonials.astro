@@ -57,7 +57,7 @@ const testimonials = await getCollection("testimonials");
                     >
                         {
                             <span
-                                class={`fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-start ${
+                                class={`quote fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-start ${
                                     isFullLength ? "hidden lg:inline" : ""
                                 }`}
                             >
@@ -72,7 +72,7 @@ const testimonials = await getCollection("testimonials");
                         ></div>
 
                         <span
-                            class={`fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-end ${
+                            class={`quote fadeUp w-10 sm:w-16 lg:w-24 shrink-0 place-self-end ${
                                 isFullLength ? "hidden lg:inline" : ""
                             }`}
                         >
@@ -92,8 +92,8 @@ const testimonials = await getCollection("testimonials");
     .quotebox strong {
         @apply font-semibold text-accent-blue;
     }
-    .fadeUp {
+    /* .quote.fadeUp {
         opacity: 0.1;
         transform: translateY(50px);
-    }
+    } */
 </style>
