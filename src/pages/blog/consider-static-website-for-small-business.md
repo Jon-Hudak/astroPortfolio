@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: Why You Should Consider a Static Website for Your Small Business
+title: Why You Should Use a Static Website
 author: Jon Hudak
 category: "Web Development"
-date: "4/24/23"
+date: "6/24/23"
 draft: false
 bannerImg: "/images/blog/1-static-website-for-small-business.jpg"
-description: Are you considering a new website for your business? Find out why a static site might be the right fit for you.
+description: Are you considering a new website for your business? Discover why a static site might be the right fit for you.
 tags:
     -web design
     -static site

@@ -1,2 +1,2 @@
-export const cities = ["Pittsburgh","Elizabeth","McKeesport"];
+export const cities = ["Pittsburgh","Elizabeth","McKeesport","Carnegie"];
  

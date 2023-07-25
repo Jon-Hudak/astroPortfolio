@@ -2,58 +2,60 @@
 import H1 from "../components/H1.astro";
 import Layout from "./Layout.astro";
 import { Image } from "@astrojs/image/components";
-const { frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
 const { title, description, date, category, author, bannerImg } = frontmatter;
-const authorSlug=author.toLowerCase().replace(" ","-")
-const authorImg=`/images/${authorSlug}.jpg` 
-
+const authorSlug = author.toLowerCase().replace(" ", "-");
+const authorImg = `/images/${authorSlug}.jpg`;
 ---
 
-<Layout title={title} description={description}  ogImg={bannerImg}>
-    <section id="blog" class="flex flex-col bg-neutral-100 mt-20">
-        <article class="light max-w-3xl mx-auto py-5">
-            <div class="titleWrapper px-3 lg:px-8">
-                <span class="bg-neutral-200 px-2 py-1 rounded-sm">{category}</span>
-                <h1 id="" class="">{title}</h1>
-                <div class="flex justify-between flex-row-reverse font-semibold place-items-center pb-6">
-                    <span class="flex place-items-center gap-4">
-                        <Image
-                        class="cardImg rounded-full"
-                        alt=""
-                        src={authorImg}
-                        width={48}
-                        height={48}
-                        
-                    />{author}</span>
-                    <span>{date}</span>
-                </div>
-            </div>
-            <img class="w-full object-cover" src={bannerImg} />
-            <div id="blogWrapper" class="px-5 lg:px-16 py-10">
-                <slot />
-            </div>
-        </article>
-        <!-- <aside id="related" class="px-16 dark">
+<Layout title={title} description={description} ogImg={bannerImg}>
+  <section id="blog" class="flex flex-col bg-neutral-100 mt-20">
+    <article class="light max-w-3xl mx-auto py-5">
+      <div class="titleWrapper px-3 lg:px-8">
+        <span class="bg-neutral-200 px-2 py-1 rounded-sm">{category}</span>
+        <h1 id="" class="">{title}</h1>
+        <div
+          class="flex justify-between flex-row-reverse font-semibold place-items-center pb-6"
+        >
+          <span class="flex place-items-center gap-4">
+            <Image
+              class="cardImg rounded-full"
+              alt=""
+              src={authorImg}
+              width={48}
+              height={48}
+            />{author}</span
+          >
+          <span>{date}</span>
+        </div>
+      </div>
+      <img class="w-full object-cover" src={bannerImg} />
+      <div id="blogWrapper" class="px-5 lg:px-16 py-10">
+        <slot />
+      </div>
+    </article>
+    <!-- <aside id="related" class="px-16 dark">
             <h2 class="text-2xl">Related Blogs</h2>
         </aside> -->
-    </section>
+  </section>
 </Layout>
 <style is:global>
-    #blog h1 {
-        @apply text-2xl sm:text-3xl md:text-5xl py-10 font-title font-bold text-center md:text-left;
-    }
-    #blog h2 {
-        @apply font-semibold font-title mt-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl;
-    }
+  #blog h1 {
+    @apply text-2xl sm:text-3xl md:text-5xl py-10 font-title font-bold text-center md:text-left;
+  }
+  #blog h2 {
+    @apply font-semibold font-title mt-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
 
-    #blog h3 {
-        @apply text-3xl font-semibold mt-8;
-    }
-    #blog p:not(:first-child),
-    #blog li {
-        @apply mt-6  lg:list-disc;
-    }
-    #blog p, #blog li{
-        @apply text-lg md:text-xl
-    }
+  #blog h3 {
+    @apply text-3xl font-semibold mt-8;
+  }
+  #blog p:not(:first-child),
+  #blog li {
+    @apply mt-6  lg:list-disc;
+  }
+  #blog p,
+  #blog li {
+    @apply text-lg md:text-xl;
+  }
 </style>
