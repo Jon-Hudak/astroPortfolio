@@ -3,7 +3,7 @@ import H1 from "../components/H1.astro";
 import Layout from "./Layout.astro";
 import { Image } from "@astrojs/image/components";
 const { frontmatter } = Astro.props;
-const { title, description, date, category, author, bannerImg } = frontmatter;
+const { title, description, date, category, author, bannerImg, bannerImgAlt } = frontmatter;
 const authorSlug = author.toLowerCase().replace(" ", "-");
 const authorImg = `/images/${authorSlug}.jpg`;
 ---
@@ -20,7 +20,7 @@ const authorImg = `/images/${authorSlug}.jpg`;
           <span class="flex place-items-center gap-4">
             <Image
               class="cardImg rounded-full"
-              alt=""
+              alt={bannerImgAlt}
               src={authorImg}
               width={48}
               height={48}

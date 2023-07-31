@@ -38,7 +38,7 @@ const description="Technical information and news about web development"
                                 <article class="blogCard flex flex-col h-full">
                                     <Image
                                         class="cardImg w-full rounded-lg"
-                                        alt=""
+                                        alt={post.frontmatter.bannerImgAlt}
                                         src={post.frontmatter.bannerImg}
                                         width={600}
                                         aspectRatio="4:3"

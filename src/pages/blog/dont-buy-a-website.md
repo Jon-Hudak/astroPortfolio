@@ -6,6 +6,7 @@ category: "Web Development"
 date: "7/25/23"
 draft: false
 bannerImg: "/images/blog/2-dont-buy-a-website.jpg"
+bannerImgAlt: A lemon in a miniature shopping cart
 description: Is a brand new website really a good investment for your small business?
 tags:
     -web design
@@ -45,6 +46,6 @@ However, if you have any questions about expanding your online presence or if yo
 
 ## Conclusion
 
-Having an online presence is important for any business. A well-built website can generate leads, answer questions, and save time. A poorly  For some, it's simply not worth going beyond something like a Facebook Business Page, for instance. Some businesses don't have the resources to allocate toward a professionally done website and might choose a budget solution that looks cheap, utilizes cookie-cutter templates, presents user experience issues that frustrate potential customers, or simply doesn't scale with the business's needs. For those individuals, let me be the guiding voice that advises against buying a website or making one DIY.
+Having an online presence is important for any business. A well-built website can generate leads, answer questions, and save time. A poorly constructed site can have the opposite effect. For some, it's simply not worth going beyond something like a Facebook Business Page, for instance. Some businesses don't have the resources to allocate toward a professionally done website and might choose a budget solution that looks cheap, utilizes cookie-cutter templates, presents user experience issues that frustrate potential customers, or simply doesn't scale with the business's needs. For those individuals, let me be the guiding voice that advises against buying a website or making one DIY.
 
 By carefully considering your unique circumstances, exploring alternative options, and prioritizing the aspects that yield the best results for your business, you can make informed decisions that align with your goals and resources. Remember, the ultimate goal is to create a strong and effective online presence that sets your business apart from the competition.
