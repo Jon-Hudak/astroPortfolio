@@ -3,91 +3,93 @@ import { Image } from "@astrojs/image/components";
 const {service="Web Design"} = Astro.props;
 ---
 
-<section class="bg-white">
+<section class="bg-neutral-800">
    
-    <div id="formContainer" class="lazy flex md:py-16" data-bg="contactImage.jpg">
-        <form
-            name="Contact"
-            class="flex flex-col px-5 sm:px-5 md:px-10 my-5 max-w-xl mx-auto sm:bg-gradient-to-b from-offBlack/60 to-offBlack/80 sm:text-white lg:w-3/5 rounded-2xl backdrop-blur-xl filter-none"
-            method="POST"
-            action="/thank-you"
-            data-netlify="true"
-            netlify
-            data-netlify-honeypot="bot-field"
-        >
-            <h2 class="h3 py-6 text-center">
-                Let's Talk About <strong>{service}</strong>
-            </h2>
-            <input name="bot-field" class="hidden" />
-            <input type="hidden" name="form-name" value="Contact" />
-            <label class="formLabel relative" for="name"
-                ><span class="text-red-500 absolute -left-3">*</span> Name:</label
+       
+        <div id="formContainer" class="flex flex-col md:py-16">
+            <form
+                name="Contact"
+                class="px-5 sm:px-5 md:px-10 my-5 flex flex-col mx-auto w-1/3 sm:bg-gradient-to-b from-offBlack to-offBlack sm:text-white rounded-2xl backdrop-blur-xl filter-none z-10 border-accent-blue shadow-[0_0_20px] shadow-accent-blue"
+                method="POST"
+                action="/thank-you"
+                data-netlify="true"
+                netlify
+                data-netlify-honeypot="bot-field"
             >
-            <input
-                required
-                name="name"
-                type="text"
-                placeholder="Matthew Mercer"
-            />
-
-            <label class="formLabel relative" for="email"
-                ><span class="text-red-500 absolute -left-3">*</span> Email:
-            </label>
-            <input
-                required
-                id="email"
-                name="email"
-                type="email"
-                placeholder="matt@critrole.com"
-            />
-            <label class="formLabel" for="message"> Message:</label>
-            <textarea
-                id="message"
-                name="message"
-                class="overflow-y-aut"
-                rows="6"
-                placeholder="How do you want to do this?"></textarea>
-            <label class="text-lg mt-3" for="marketing">
-                <input
-                    
-                    name="newsletter"
-                    type="checkbox"
-                    class="accent-accent-blue"
-                /> Recieve newsletter emails (not required)</label
-            >
-
-            <button
-                type="submit"
-                class="button py-5 mt-5 px-8 w-min"
-            >
-                Submit
-            </button>
-            <p class="text-right my-5 text-lg">
-                or email me at <a
-                    class="text-black sm:text-white font-semibold text-left"
-                    href="mailto:jon@jonhudak.dev">jon@jonhudak.dev</a
+                <h2 class="h3 py-6 text-center">
+                    Let's Talk About <strong>{service}</strong>
+                </h2>
+                <input name="bot-field" class="hidden" />
+                <input type="hidden" name="form-name" value="Contact" />
+                <label class="formLabel relative" for="name"
+                    ><span class="text-red-500 absolute -left-3">*</span> Name:</label
                 >
-            </p>
-        </form>
-    </div>
+                <input
+                    required
+                    name="name"
+                    type="text"
+                    placeholder="Matthew Mercer"
+                />
+                <label class="formLabel relative" for="email"
+                    ><span class="text-red-500 absolute -left-3">*</span> Email:
+                </label>
+                <input
+                    required
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="matt@critrole.com"
+                />
+                <label class="formLabel" for="message"> Message:</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    class="overflow-y-aut"
+                    rows="6"
+                    placeholder="How do you want to do this?"></textarea>
+                <label class="text-lg mt-3" for="marketing">
+                    <input
+       
+                        name="newsletter"
+                        type="checkbox"
+                        class="accent-accent-blue"
+                    /> Recieve newsletter emails (not required)</label
+                >
+                <button
+                    type="submit"
+                    class="button py-5 mt-5 px-8 w-min"
+                >
+                    Submit
+                </button>
+                <p class="text-right my-5 text-lg">
+                    or email me at <a
+                        class="text-black sm:text-white font-semibold text-left"
+                        href="mailto:jon@jonhudak.dev">jon@jonhudak.dev</a
+                    >
+                </p>
+            </form>
+        </div>
+        
 </section>
 <style>
     input,
     textarea {
         @apply border border-accent-blue rounded-lg bg-neutral-200/60 sm:bg-white placeholder:text-black/60 placeholder:font-semibold placeholder:text-xl px-5 py-3 text-offBlack font-semibold;
     }
-    #formContainer {
+    /* #formContainer {
         background-image: url("../images/contactImage.jpg");
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
-    }
+        position:relative; 
 
-    @media (max-width: 640px) {
-        #formContainer {
-            background-image: none;
-        }
-    }
+    }*/
+    /* #formContainer::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        @apply sm:bg-black/40;
+    } */
     .inputField {
     @apply text-black px-3 py-2 mt-3 text-xl w-full bg-blue-50 focus:bg-blue-200 border-2 border-blue-500 outline-double outline-4 outline-neutral-700 rounded-2xl;
   }
