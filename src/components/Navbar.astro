@@ -48,31 +48,16 @@ const { city = "pittsburgh" } = Astro.props;
         <a href="/about">About</a>
       </li>
 
-      <li class="navLi navDropLi delay-150 block relative">
-        <button
-          type="button"
-          class="navDropBtn whitespace-nowrap"
-          aria-expanded="false"
-          ><span class="mx-auto pointer-events-none"
-            >Services<Icon
-              class="navDropIcon inline w-6 lg:w-8 pointer-events-none"
-              name="ic:baseline-arrow-drop-down"
-            /></span
-          ></button
-        >
-        <ul class="navDropdown">
-          <li>
-            <a href={`/${city}-web-development`}>Web Design</a>
+      
+        
+          <li class="navLi delay-150 group flex-col">
+            <a href={`/${city}-web-development`} class=" whitespace-nowrap ">Web Design</a>
           </li>
-          <li>
-            <a href={`/${city}-seo`}>SEO</a>
-          </li>
-        </ul>
-      </li>
+        
 
       <li class="navLi delay-200 group flex-col"><a href="/blog">Blog</a></li>
       <li class="navLi delay-250">
-        <a href="/contact-pittsburgh-web-developer">Contact</a>
+        <a href="/contact">Contact</a>
       </li>
       <li class="navLi hidable animate">
         <a
