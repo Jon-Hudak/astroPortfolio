@@ -6,8 +6,6 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Head from "./Head.astro";
 
-
-
 let showToTop = false;
 // let lastYPos = 0;
 let navbarChange = false;
@@ -19,39 +17,71 @@ const {
   url,
   footerClass,
   background,
-  city
+  city,
 } = Astro.props;
-const socialImg = new URL(ogImg, Astro.site)
+const socialImg = new URL(ogImg, Astro.site);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-
-
 ---
-<Head title={title} description={description} canonicalURL={canonicalURL} socialImg={ogImg}>
+
+<Head
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  socialImg={ogImg}
+>
   <body class={`flex flex-col overflow-x-hidden min-h-screen ${background}`}>
     <Navbar city={city} navbarChange={false} />
-    <main class="">
+    <main class="cont-grid">
       <slot />
     </main>
-   <Footer/>
+    <Footer />
     <!-- <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script> -->
   </body>
 </Head>
-
-
 
 <style is:global>
   /* .resize-animation-stopper * {
     animation: none !important;
     transition: none !important;
   } */
+  .cont-grid {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(60rem, 100% - var(--gap) * 2);
+    --popout: minmax(0, 3rem);
+    --feature: minmax(0, 5rem);
 
+    display: grid;
+    grid-template-columns:
+      [full-start] var(--full)
+      [feature-start] var(--feature)
+      [popout-start] var(--popout)
+      [content-start] var(--content) [content-end]
+      var(--popout) [popout-end]
+      var(--feature) [feature-end]
+      var(--full) [full-end];
+  }
+  .cont-grid > .full {
+    grid-column: full;
+  }
+  .cont-grid > .content {
+    grid-column: content;
+  }
+  .cont-grid > .popout {
+    grid-column: popout;
+  }
+  .cont-grid > .feature {
+    grid-column: feature;
+  }
+  .cont-grid>*{
+    grid-column:full;
+  }
   html {
     @apply bg-dark-gray focus:outline-none focus:ring focus:ring-accent-orange ring-inset;
   }
- 
-  .h1{
-    @apply text-6xl font-title text-black text-center
+
+  .h1 {
+    @apply text-6xl font-title text-black text-center;
   }
   .h2 {
     @apply font-thin  text-5xl sm:text-5xl leading-snug;
@@ -66,12 +96,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   .button {
     @apply font-black font-mono text-2xl rounded-sm shadow-lg bg-accent-blue border border-neutral-400 text-gray-900 hover:bg-sky-700 hover:text-gray-300 active:bg-sky-900 focus:outline-none focus:ring focus:ring-sky-500;
   }
-  .ghostButton{
+  .ghostButton {
     @apply font-black font-mono rounded-sm shadow-lg border border-accent-blue text-accent-blue hover:bg-accent-blue hover:border-accent-blue-dark hover:text-black active:bg-sky-900 focus:outline-none focus:ring focus:ring-sky-500 cursor-pointer no-underline;
   }
- 
-  a.button{
-    @apply  no-underline text-black cursor-pointer !important;}
+
+  a.button {
+    @apply no-underline text-black cursor-pointer !important;
+  }
 
   .imgShadow-sm {
     -webkit-filter: drop-shadow(1px 1px 1px #43b0ff);
@@ -82,13 +113,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     -webkit-filter: drop-shadow(1px 1px 1px black);
     filter: drop-shadow(-1px 2px 3px black);
   }
-  .dark a:not(.button,.ghostButton){
+  .dark a:not(.button, .ghostButton) {
     @apply text-accent-blue hover:text-accent-blue-dark;
   }
-  .light a{
+  .light a {
     @apply text-blue-500 hover:text-blue-800;
   }
-  a{
+  a {
     @apply underline;
   }
 
@@ -107,10 +138,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   .dark {
     @apply text-white bg-dark-gray;
   }
-  .light{
+  .light {
     @apply text-black bg-white;
   }
- 
 </style>
 <script>
   import observer from "../utils/observer";
@@ -121,15 +151,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   observer(fadeUps, "animate", 0.2);
   observer(rotates, "animate");
 </script>
-<script>//any non-internal link opens in a new window
-  const internal = location.host.replace("www.","");
-  const internalRegEx= new RegExp(internal,"i");
+<script>
+  //any non-internal link opens in a new window
+  const internal = location.host.replace("www.", "");
+  const internalRegEx = new RegExp(internal, "i");
   const links = document.querySelectorAll("a");
-  links.forEach((link)=>{
-    let href=link.host;
-    if(!internalRegEx.test(href)){
-      link.target="_blank";
+  links.forEach((link) => {
+    let href = link.host;
+    if (!internalRegEx.test(href)) {
+      link.target = "_blank";
     }
-  })
-
+  });
 </script>
