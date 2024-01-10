@@ -93,55 +93,17 @@ const packagess = {
         ],
     },
 };
-const packages = [
-    {
-        name: "Premium",
-        price: "3000",
-        per: "",
-        disclaimer: "Estimate based on average site",
-        list: [
-            "5 Pages",
-            "Hand Coded",
-            "Optional CMS integration",
-            "All-inclusive service plan only $50/month",
-        ],
-    },
-    {
-        name: "Monthly",
-        featured: true,
-        price: "150",
-        per: "/mo",
-        disclaimer: "Estimate based on average site",
-        list: [
-            "5 Pages",
-            "Hosting",
-            "Unlimited Edits",
-            "24/7 Customer Service",
-        ],
-    },
-    {
-        name: "E-Commerce",
-        price: "6000",
-        per: "",
-        disclaimer: "Estimate based on average site",
-        list: [
-            "Custom Design",
-            "Hand-Coded",
-            "Custom Shopify Integration",
-            "Easy to Use",
-        ],
-    },
-];
 
-const service = "Web Design";
-const title = `Best ${city} Web Design`;
+
+const service = "Web Development";
+const title = `Best ${city} Web Development`;
 const description = `Get a fast, secure website that your customers will adore.`;
 ---
 
 <Layout title={title} description={description} city={city.toLowerCase()}>
     <H1 class="h1">{city} Web Design</H1>
 
-    <Pricing service={service} {packages} />
+    <Pricing service={service} />
     <ThreeCards service={service} {cards} />
     <FAQ service={service} filter="Web Design" />
     <Contact service={service} />

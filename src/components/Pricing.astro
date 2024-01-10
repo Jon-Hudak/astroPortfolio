@@ -1,12 +1,50 @@
 ---
 import H1 from "./H1.astro";
 
-const { service, packages } = Astro.props;
+const packages = [
+    {
+        name: "Premium",
+        price: "3000",
+        per: "",
+        disclaimer: "Estimate based on average site",
+        list: [
+            "5 Pages",
+            "Hand Coded",
+            "Optional CMS integration",
+            "All-inclusive service plan only $50/month",
+        ],
+    },
+    {
+        name: "Monthly",
+        featured: true,
+        price: "150",
+        per: "/mo",
+        disclaimer: "Estimate based on average site",
+        list: [
+            "5 Pages",
+            "Hosting",
+            "Unlimited Edits",
+            "24/7 Customer Service",
+        ],
+    },
+    {
+        name: "E-Commerce",
+        price: "6000",
+        per: "",
+        disclaimer: "Estimate based on average site",
+        list: [
+            "Custom Design",
+            "Hand-Coded",
+            "Custom Shopify Integration",
+            "Easy to Use",
+        ],
+    },
+];
 
 ---
 
-<section class="dark pb-16">
-    <h2 class="h2 text-center py-16">{service} Pricing</h2>
+<section class="dark py-16">
+    <h2 class="h2 py-16 sr-only">Web Development Pricing</h2>
     <div
         class="my-16 flex flex-wrap md:flex-nowrap place-items-center px-12 justify-center gap-6"
     >{
@@ -16,7 +54,7 @@ const { service, packages } = Astro.props;
                    <p class="mt-8 text-accent-blue text-5xl relative text-center flex place-content-center"><span class="text-3xl mt-1">$</span>{pkg.price}<small class="place-self-end">{pkg.per}</small></p>
                    <ul class="pl-8 pr-2 mt-8 mx-auto list-disc text-left max-w-[200px] h-[13em]">
                     {pkg.list.map((item)=><li class="mt-4 first:mt-0">{item}</li>)}</ul>
-                    <a href="" class="ghostButton my-4 px-3 py-1 text-lg mx-auto">Contact</a>
+                    <a href="/contact" class="ghostButton my-4 px-3 py-1 text-lg mx-auto">Contact</a>
                 </article>
             )
         }

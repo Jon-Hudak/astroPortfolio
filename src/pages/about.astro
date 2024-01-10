@@ -13,7 +13,7 @@ const description="Hi, I'm Jon, a local web developer from the Pittsburgh area. 
 <Layout title={title} description={description}>
     <H1 classes="">Pittsburgh Website Developer</H1>
     <section
-        class="pt-8 text-whit bg-white flex flex-col-reverse md:flex-row relative justify-between place-items-center"
+        class="text-white bg-neutral-800 flex flex-col-reverse md:flex-row relative justify-between place-items-center"
     >
         <article class="px-8 md:w-1/2">
             <h2 class="h2 mt-8">About Jon</h2>
@@ -51,7 +51,7 @@ const description="Hi, I'm Jon, a local web developer from the Pittsburgh area. 
             <p id=""class="signature text-right text-5xl pb-8 select-none ">Jon Hudak</p>
         </article>
         <div
-            class="mt-auto h-min md:place-content-end absolut right-0 bottom-0 md:sticky"
+            class="mt-auto h-min md:place-content-end absolut right-0 bottom-0 md:sticky overflow-hidden "
         >
             <video
                 id="heroPic"
@@ -69,8 +69,6 @@ const description="Hi, I'm Jon, a local web developer from the Pittsburgh area. 
         </div>
     </section>
     
-    <FAQ filter="Web Design"/>
-    <Contact />
 </Layout>
 
 <style>

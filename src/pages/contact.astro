@@ -3,13 +3,44 @@ import Contact from "../components/Contact.astro";
 import H1 from "../components/H1.astro";
 import Layout from "../layouts/Layout.astro";
 
-const title="Contact Pittsburgh Web Developer"
-const description="Let's start a conversation about how to improve your sales with a professional website and SEO services!"
+const title = "Contact Pittsburgh Web Developer";
+const description =
+  "Let's start a conversation about how to improve your sales with a professional website and SEO services!";
+const heroPic = "../../public/images/Jon-Hudak-Pittsburgh-Web-Developer.webm";
 ---
 
 <Layout title={title} description={description}>
-    <H1>Contact</H1>
-    <section class="">
-        <Contact />
-    </section>
+  <H1>Contact</H1>
+  <section class="contact full bg-neutral-800">
+    <div class="grid lg:grid-cols-2 text-white ">
+      <Contact />
+
+      <article class="py-20 mx-auto">
+        <video
+          aria-label="A photo of Jon Hudak giving a thumbs up with a glitch effect."
+          class="imgShadow-sm z-10 w-64 aspect-square min-h-max object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl"
+          autoplay
+          loop
+          muted
+          playsInline
+        >
+          <source src={heroPic} type="video/webm" />
+          This animation doesn't work on your browser. Let me know so I can fix it!
+        </video>
+        <div
+          class="grid place-content-cente mt-12 px-8 relative before:absolute before:inset-y-0 before:left-0 before:border-l-4 before:rounded-full before:border-accent-blue  before:shadow-[0_0_20px] before:shadow-accent-blue"
+        >
+          <p class="font-bold text-2xl">Email:</p>
+          <a href="mailto:jon@jonhudak.dev" class="text-lg mt-1"
+            >jon@jonhudak.dev</a>
+        </div>
+        <div
+          class="grid place-content-cente mt-8 relative px-8 before:absolute before:inset-y-0 before:left-0 before:border-l-4 before:rounded-full before:border-accent-blue  before:shadow-[0_0_20px] before:shadow-accent-blue"
+        >
+          <p class="font-bold text-2xl ">Text or Call:</p>
+          <a href="tel:4124051059" class="text-lg mt-1">412-405-1059</a>
+        </div>
+      </article>
+    </div>
+  </section>
 </Layout>
