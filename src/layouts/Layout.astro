@@ -47,7 +47,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   .cont-grid {
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(var(--gap), 1fr);
-    --content: min(60rem, 100% - var(--gap) * 2);
+    --content: min(80rem, 100% - var(--gap) * 2);
     --popout: minmax(0, 3rem);
     --feature: minmax(0, 5rem);
 
@@ -61,20 +61,44 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       var(--feature) [feature-end]
       var(--full) [full-end];
   }
-  .cont-grid > .full {
-    grid-column: full;
-  }
-  .cont-grid > .content {
+  .cont-grid > :not(.breakout, .full),
+  .full > :not(.breakout, .full) {
     grid-column: content;
   }
-  .cont-grid > .popout {
+  .cont-grid > .full {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  .cont-grid .content {
+    grid-column: content;
+  }
+  .cont-grid .popout {
     grid-column: popout;
   }
-  .cont-grid > .feature {
+  .cont-grid .feature {
     grid-column: feature;
   }
-  .cont-grid>*{
-    grid-column:full;
+
+  .full > .full {
+    grid-column: full;
+  }
+  @media (max-width: 556px) {
+    .cont-grid > :not(.breakout, .full, .mobile-full),
+    .full > :not(.breakout, .full, .mobile-full),
+    .mobile-full > :not(.breakout, .full, .mobile-full) {
+      grid-column: content;
+    }
+    .cont-grid>.mobile-full {
+      grid-column: full;
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+    .full > .full,
+    .full > .mobile-full,
+    .mobile-full > .mobile-full, .mobile-full>.full {
+      grid-column: full;
+    }
   }
   html {
     @apply bg-dark-gray focus:outline-none focus:ring focus:ring-accent-orange ring-inset;
@@ -133,7 +157,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   .animate {
     opacity: 1;
     transform: translateY(0px);
-    transition: opacity 2s, transform 2s;
+    transition:
+      opacity 2s,
+      transform 2s;
   }
   .dark {
     @apply text-white bg-dark-gray;
