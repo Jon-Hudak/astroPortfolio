@@ -21,15 +21,17 @@ const infoItems = [
 ];
 ---
 
-<section
-  class="py-16 place-items-center bg-white"
->
-<h2 class="h2 text-black px-5">Web Design Services</h2>
-  <div class="px-3 md:px-10 mt-16 grid grid-cols-1 lg:grid-cols-3 w-full mx-auto gap-10 lg:gap-8 max-w-7x">
-    {
-      infoItems.map((item) => (
-        <InfoCard title={item.title} icon={item.icon} text={item.text} />
-      ))
-    }
+<section class="full py-16 place-items-center text-white ">
+  <div class=" infoWrapper">
+    <h2 class="h2">Why Work With Me?</h2>
+    <div
+      class="mt-16 grid grid-cols-1 lg:grid-cols-3 w-full gap-10 lg:gap-8 max-w-7x"
+    >
+      {
+        infoItems.map((item) => (
+          <InfoCard title={item.title} icon={item.icon} text={item.text} />
+        ))
+      }
+    </div>
   </div>
 </section>
