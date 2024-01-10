@@ -7,63 +7,99 @@ const { city, h1, h2, buttonText } = Astro.props;
 
 <section
   id="top"
-  class="pt-24 sm:pt-32 pb-12 lg:pb-0 px-0 justify-between overflow-hidden bg-gradient-to-b from-dark-gray to-neutral-700"
+  class="relative pt-8 pb-48 px-0 justify-between overflow-hidden full"
 >
-  <div id="heroInfo" class="">
-    <h1 class="mt-20 text-4xl sm:text-7xl select-none text-white font-title">
-      {city}
-      <strong class="font-normal text-accent-blue">{h1}</strong>
-    </h1>
-    <div class="heroInfoWrap">
-      <h2
-        class="font-sans mt-5 text-xl sm:text-2xl text-center text-white mx-8"
+
+  <div class="heroWrapper max-w-7xl grid md:grid-cols-3 gap-12">
+    <video
+      id="heroPic"
+      aria-label="A photo of Jon Hudak giving a thumbs up with a glitch effect."
+      class="md:order-last imgShadow-sm z-10 w-48 h-48 lg:w-auto lg:h-auto aspect-square min-h-max object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-heroRoll"
+      autoplay
+      loop
+      muted
+      playsInline
+    >
+      <source src={heroPic} type="video/webm" />
+      This animation doesn't work on your browser. Let me know so I can fix it!
+    </video>
+    <div id="heroInfo" class="md:col-span-2">
+      <h1
+        class="text-center md:text-left text-5xl sm:text-7xl select-none text-white font-title p-1 py-2"
       >
-        {h2}
-      </h2>
-      <a
-        href="/contact"
-        class={`button inline-block  text-center text-xl relative py-6 px-6 mt-10 mx-2 lg:w-auto sm:mx-auto`}
-      >
-        {buttonText}
-      </a>
+        {city}
+        <strong class="font-normal text-accent-blue">{h1}</strong>
+      </h1>
+      <div class="heroInfoWrap">
+        <h2
+          class="font-sans mt-8 text-xl sm:text-3xl text-center md:text-left text-white"
+        >
+          {h2}
+        </h2>
+        <div class="availableWrapper flex flex-col lg:flex-row mt-16 gap-8">
+          <a
+            href="/contact"
+            class={`button inline-block  text-center text-xl relative py-6 px-6 w-full lg:w-auto `}
+          >
+            {buttonText}
+          </a>
+          <div class="flex place-items-center gap-2 text-white text-xl">
+            <span class="w-3 h-3 bg-green-500 rounded-full relative before:absolute before:inset-0 before:animate-ping before:bg-green-500 before:rounded-full"></span><div class="flex justify-between gap-2 lg:gap-8 w-full"><span class=""> Available for Work!</span><a class="font-bold" href="mailto:jon@jonhudak.dev">jon@jonhudak.dev</a></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <video
-    id="heroPic"
-    aria-label="A photo of Jon Hudak giving a thumbs up with a glitch effect."
-    class="ml-auto lg:mt-12 imgShadow-sm lg:rounded-none lg:border-none lg:shadow-none z-10 w-48 h-48 min-h-max lg:w-auto lg:h-auto object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-heroRoll lg:animate-heroSlide"
-    autoplay
-    loop
-    muted
-    playsInline
-  >
-    <source src={heroPic} type="video/webm" />
-    This animation doesn't work on your browser. Let me know so I can fix it!
-  </video>
+  <div class="asym-Curve-Divider hidden lg:block full fill-offBlack">
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
 </section>
 
 <style>
   section {
     display: grid;
-    grid-column:content;
-    
-    grid-template-columns: [text-start] 2fr [image-start] 1fr [text-end] 1fr [image-end];
+    grid-template-columns: subgrid;
+  }
+  section > .heroWrapper {
+    display: grid;
+    grid-column: content;
+
+    /* grid-template-columns: [text-start] 2fr [image-start] 1fr [text-end] 1fr [image-end]; */
     /* grid-template-rows: [text-start image-start] auto [text-end image-end]; */
   }
   #heroInfo {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: auto 1fr;
-    grid-column: text;
-    grid-row:1;background: red;
   }
   h1 {
-    grid-column: text;
   }
   video {
-    grid-column: image;
-    grid-row:1/-1;
-
+    place-self: center;
+    grid-column:;
   }
+  .asym-Curve-Divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .asym-Curve-Divider svg {
+    position: relative;
+    display: block;
+    width: calc(110% + 1.3px);
+    height: 149px;
+  }
+
+  
 </style>

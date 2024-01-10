@@ -1,5 +1,4 @@
 ---
-import { Image } from "@astrojs/image/components";
 import H1 from "../../components/H1.astro";
 import Layout from "../../layouts/Layout.astro";
 
@@ -8,8 +7,8 @@ console.log(allPosts);
 const filterDrafts = true;
 const filterFuturePosts = false;
 const currentDate = new Date();
-const title="Pittsburgh Web Development Blog"
-const description="Technical information and news about web development"
+const title = "Pittsburgh Web Development Blog";
+const description = "Technical information and news about web development";
 ---
 
 <Layout title={title} description={description}>
@@ -36,16 +35,13 @@ const description="Technical information and news about web development"
                         return (
                             <a class="no-underline" href={post.url}>
                                 <article class="blogCard flex flex-col h-full">
-                                    <Image
-                                        class="cardImg w-full rounded-lg"
+                                    <img
+                                        class="cardImg w-full aspect-[16/9] object-cover"
                                         alt={post.frontmatter.bannerImgAlt}
                                         src={post.frontmatter.bannerImg}
                                         width={600}
-                                        aspectRatio="4:3"
-                                        format="avif"
-                                        fit="cover"
-                                    />
-                                    <div class="dark relative -top-16 w-4/5 mx-auto px-8 pb-8 rounded-b-3xl h-full flex flex-col justify-between">
+                                                                            />
+                                    <div class="dark relative -top-16 w-4/5 mx-auto px-8 pb-8 h-full flex flex-col justify-between">
                                         <div class="flex flex-col">
                                             <h2 class="text-center font-title text-2xl md:text-lg font-bold lg:text-xl pt-8 ">
                                                 {post.frontmatter.title}
