@@ -1,24 +1,23 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
+
 const {service="Web Design"} = Astro.props;
 ---
 
-<section class="bg-neutral-800">
-   
+<section class="bg-neutral-800 full place-items-center ">
+  
        
-        <div id="formContainer" class="flex flex-col md:py-16">
+        <div id="formContainer" class="flex flex-col md:py-16 max-w-2xl place-content-center w-full mx-auto">
             <form
                 name="Contact"
-                class="px-5 sm:px-5 md:px-10 my-5 flex flex-col mx-auto w-1/3 sm:bg-gradient-to-b from-offBlack to-offBlack sm:text-white rounded-2xl backdrop-blur-xl filter-none z-10 border-accent-blue shadow-[0_0_20px] shadow-accent-blue"
+                class="px-5 sm:px-5 md:px-10 my-5 py-5 w-full flex flex-col sm:bg-gradient-to-b from-offBlack to-offBlack sm:text-white rounded-2xl backdrop-blur-xl filter-none z-10 border-accent-blue shadow-[0_0_20px] shadow-accent-blue"
                 method="POST"
                 action="/thank-you"
                 data-netlify="true"
                 netlify
                 data-netlify-honeypot="bot-field"
             >
-                <h2 class="h3 py-6 text-center">
-                    Let's Talk About <strong>{service}</strong>
-                </h2>
+                
                 <input name="bot-field" class="hidden" />
                 <input type="hidden" name="form-name" value="Contact" />
                 <label class="formLabel relative" for="name"
@@ -28,7 +27,7 @@ const {service="Web Design"} = Astro.props;
                     required
                     name="name"
                     type="text"
-                    placeholder="Matthew Mercer"
+                    placeholder="Matthew M"
                 />
                 <label class="formLabel relative" for="email"
                     ><span class="text-red-500 absolute -left-3">*</span> Email:
@@ -38,7 +37,7 @@ const {service="Web Design"} = Astro.props;
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="matt@critrole.com"
+                    placeholder="jon@jonhudak.dev"
                 />
                 <label class="formLabel" for="message"> Message:</label>
                 <textarea
@@ -57,16 +56,16 @@ const {service="Web Design"} = Astro.props;
                 >
                 <button
                     type="submit"
-                    class="button py-5 mt-5 px-8 w-min"
+                    class="button py-5 my-5 px-8 w-min"
                 >
                     Submit
                 </button>
-                <p class="text-right my-5 text-lg">
+                <!-- <p class="text-right my-5 text-lg">
                     or email me at <a
                         class="text-black sm:text-white font-semibold text-left"
                         href="mailto:jon@jonhudak.dev">jon@jonhudak.dev</a
                     >
-                </p>
+                </p> -->
             </form>
         </div>
         
