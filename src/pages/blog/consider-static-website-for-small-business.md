@@ -8,15 +8,16 @@ draft: false
 bannerImg: "/images/blog/1-static-website-for-small-business.jpg"
 bannerImgAlt: Visiting a webpage on a laptop
 description: Are you considering a new website for your business? Discover why a static site might be the right fit for you.
-tags:
-    -web design
-    -static site
-    -wordpress
-    -wix
+tags: -web design
+  -static site
+  -wordpress
+  -wix
 ---
-In today’s digital world, it’s easy to look for fast solutions to our problems. Unfortunately, as with many things in life, convenient solutions can have a lot of  unintended or even invisible downsides Websites are no different. In this blog, we’ll explore what a static website is and the benefits it could offer to your small business.
+
+In today’s digital world, it’s easy to look for fast solutions to our problems. Unfortunately, as with many things in life, convenient solutions can have a lot of unintended or even invisible downsides Websites are no different. In this blog, we’ll explore what a static website is and the benefits it could offer to your small business.
 
 ## What is a Static Website?
+
 Static websites have been around since the very [first pages of the internet](https://www.businessinsider.com/flashback-this-is-what-the-first-website-ever-looked-like-2011-6#:~:text=The%20first%20web%20page%20went,%2FWWW%2FTheProject.html). In essence, all it means to be “static” is to have an HTML file sent directly from the server to your browser. This is extremely efficient as the server doesn’t spend precious seconds to interpret how the site should look and be displayed before sending it to you.
 
 Dynamic websites, in contrast, typically store a lot of information on a [CMS](https://blog.hubspot.com/blog/tabid/6307/bid/7969/what-is-a-cms-and-why-should-you-care.aspx) (like Wordpress or Wix) and then use code running on the server to build the HTML file for the page on the back-end every time you go to it. Most sites that are built on Wordpress or another website builder use this method.
@@ -34,7 +35,7 @@ The advantage that static sites have over dynamic ones is a significant increase
 
 ## Examples of Static Websites
 
-There are a number of popular Static Site Generators (SSG). The list includes names such as Hugo, Gatsby, as well as newcomer, and my personal favorite, Astro. Though the technology in a basic form has been around for quite some time with Jekyll, a primarily blog-focused SSG started in 2008 and still commonly used for [Github Pages](https://pages.github.com/).  You can find names all the way from National Geographic to Draft Kings to the very site in which you’re reading this blog all using Static Site Generation as their go-to technology.
+There are a number of popular Static Site Generators (SSG). The list includes names such as Hugo, Gatsby, as well as newcomer, and my personal favorite, Astro. Though the technology in a basic form has been around for quite some time with Jekyll, a primarily blog-focused SSG started in 2008 and still commonly used for [Github Pages](https://pages.github.com/). You can find names all the way from National Geographic to Draft Kings to the very site in which you’re reading this blog all using Static Site Generation as their go-to technology.
 
 ## Conclusion
 

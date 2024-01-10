@@ -6,6 +6,7 @@ import Portfolio from "../components/Portfolio.astro";
 import Services from "../components/Services.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Layout from "../layouts/Layout.astro";
+import Pricing from "../components/Pricing.astro";
 ---
 
 <Layout
@@ -13,13 +14,16 @@ import Layout from "../layouts/Layout.astro";
   description="Custom websites for small businesses in the Greater Pittsburgh Area!"
   slug=""
 >
-  <Hero city="Pittsburgh" h1={`Web Developer`} h2={`Custom website design for small businesses in the Pittsburgh area.`} buttonText={`Free Web Design Consultation`}/>
-  <InfoSection />
+  <Hero
+    city="Pittsburgh"
+    h1={`Web Developer`}
+    h2={`Fast, secure, custom websites for small businesses in the Pittsburgh area.`}
+    buttonText={`Hire Me`}
+  />
   <Portfolio />
+  <InfoSection />
   <Testimonials />
-  <Contact />
+  <Pricing />
+  
 </Layout>
-<script>
-  
-  
-</script>
+<script></script>

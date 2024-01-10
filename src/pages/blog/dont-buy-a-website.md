@@ -8,10 +8,10 @@ draft: false
 bannerImg: "/images/blog/2-dont-buy-a-website.jpg"
 bannerImgAlt: A lemon in a miniature shopping cart
 description: Is a brand new website really a good investment for your small business?
-tags:
-    -web design
-    -small business
+tags: -web design
+  -small business
 ---
+
 Don't buy a website. Yes, you heard me right. As the world becomes increasingly intertwined with the internet, establishing your online identity seems like a no-brainer. So why would someone who earns a living developing websites advise against purchasing their services? Well, besides being a catchy hook, there are a few compelling reasons behind it. Allow me a few minutes of your time, and I'll walk you through my thought process.
 
 ## Bargain Binging
