@@ -7,32 +7,34 @@ const { city, h1, h2, buttonText } = Astro.props;
 
 <section
   id="top"
-  class="relative pt-8 pb-48 px-0 justify-between overflow-hidden full"
+  class="relative pt-8 md:pb-48 g:pb-48 px-0 justify-between overflow-hidden full"
 >
 
-  <div class="heroWrapper max-w-7xl grid md:grid-cols-3 gap-12">
-    <video
-      id="heroPic"
-      aria-label="A photo of Jon Hudak giving a thumbs up with a glitch effect."
-      class="md:order-last imgShadow-sm z-10 w-48 h-48 lg:w-auto lg:h-auto aspect-square min-h-max object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-heroRoll"
-      autoplay
-      loop
-      muted
-      playsInline
-    >
-      <source src={heroPic} type="video/webm" />
-      This animation doesn't work on your browser. Let me know so I can fix it!
-    </video>
-    <div id="heroInfo" class="md:col-span-2">
+  <div class="heroWrapper max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <div class="heroImgWrapper md:order-last place-self=start mx-auto">
+      <video
+        id="heroPic"
+        aria-label="A photo of Jon Hudak giving a thumbs up with a glitch effect."
+        class="imgShadow-sm z-10 w-48 h-48 md:w-auto md:h-auto aspect-square min-h-max object-cover object-top rounded-full shrink-0 border-2 border-accent-blue shadow-xl animate-heroRoll"
+        autoplay
+        loop
+        muted
+        playsInline
+      >
+        <source src={heroPic} type="video/webm" />
+        This animation doesn't work on your browser. Let me know so I can fix it!
+      </video>
+    </div>
+    <div id="heroInfo" class="lg:col-span-2">
       <h1
-        class="text-center md:text-left text-5xl sm:text-7xl select-none text-white font-title p-1 py-2"
+        class="text-center md:text-left text-5xl sm:text-6xl sm:text-7xl select-none text-white font-title p-1 py-2"
       >
         {city}
         <strong class="font-normal text-accent-blue">{h1}</strong>
       </h1>
       <div class="heroInfoWrap">
         <h2
-          class="font-sans mt-8 text-xl sm:text-3xl text-center md:text-left text-white"
+          class="text-balance font-sans mt-8 text-xl sm:text-3xl text-center md:text-left text-white"
         >
           {h2}
         </h2>
