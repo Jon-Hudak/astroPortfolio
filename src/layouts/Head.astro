@@ -12,6 +12,7 @@ const { title, description, canonicalURL, socialImg } = Astro.props;
         <link rel="sitemap" href="/sitemap-index.xml">
         <meta property="og:title" content={title} />
         <meta property="og:image" content={socialImg} />
+        <meta property="twitter:image" content={socialImg} />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={description} />
