@@ -5,18 +5,21 @@ import InfoCard from "./InfoCard.astro";
 const infoItems = [
   {
     text: "When a website takes even 3 seconds to load, it could result in as many as 32% more people leaving before it even fully loads. That number starts growing for every second that passes. Many sites made with page builders are frequently bogged down with bloated code and load times that well exceed what is recommended. My sites all hand-coded, ensuring that yours will be blazing fast no matter what we throw at it.",
-    icon: "lightbulb",
+    icon: "speedometer",
     title: "Performance",
+    iconSrc:"https://www.svgrepo.com/show/152792/speedometer-simple-symbol.svg"
   },
   {
     text: "A common problem with many website solutions is the site suddenly going offline or getting hacked. Dynamic page builders need to access a database to retrieve their information. Wordpress, for examples, requires frequent updates and careful plugin maintenance to stay secure. My custom-built sites do not require any database or plugin maintenance meaning they're always available and safe from malicious attacks.",
-    icon: "phone",
+    icon: "padlock",
     title: "Security",
+    iconSrc:"https://www.svgrepo.com/show/525406/lock-keyhole.svg"
   },
   {
     text: "With the release of Google's Core Web Vitals update, it's more important than ever to focus on the things that make Google happy. Those things are speed, so the site loads fast, particularly on mobile devices, responsiveness to look good on any device, and accessibility, because everyone should be able to use your site no matter what. I treat every line of code with care to make sure it scores highly in all of these areas.",
     icon: "magnifyingGlass",
     title: "On-page SEO",
+    iconSrc:"https://www.svgrepo.com/show/141785/magnifying-lens.svg"
   },
 ];
 ---
@@ -29,7 +32,7 @@ const infoItems = [
     >
       {
         infoItems.map((item) => (
-          <InfoCard title={item.title} icon={item.icon} text={item.text} />
+          <InfoCard title={item.title} icon={item.icon} text={item.text} iconSrc={item.iconSrc}/>
         ))
       }
     </div>
