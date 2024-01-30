@@ -169,6 +169,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 </style>
 <script>
+  // @ts-nocheck 
   import observer from "../utils/observer";
 
   const fadeUps = document.querySelectorAll(".fadeUp");
