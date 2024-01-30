@@ -11,7 +11,7 @@ const { title, description, canonicalURL, socialImg } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:title" content={title} />
-    <meta property="og:image" content=`https://jonhudak.dev/${socialImg}` />
+    <meta property="og:image" content=`https://jonhudak.dev${socialImg}` />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
@@ -24,7 +24,7 @@ const { title, description, canonicalURL, socialImg } = Astro.props;
     <meta name="twitter:site" content="@hudakcode"/>
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content=`https://jonhudak.dev/${socialImg}`/>
+    <meta name="twitter:image" content=`https://jonhudak.dev${socialImg}`/>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
