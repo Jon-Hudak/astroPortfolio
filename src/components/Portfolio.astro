@@ -33,6 +33,7 @@ const portfolio = await getCollection("portfolio");
                 </div>
                 <video
                   class=" lazy  w-full object-fill shrink shadow-lg z-20"
+                  poster={`${item.data.poster?item.data.poster:""}`}
                   loop
                   muted
                   playsinline
@@ -78,8 +79,7 @@ const portfolio = await getCollection("portfolio");
     });
 
     cards[index].addEventListener("mouseleave", () => {
-      video.pause();
-      video.currentTime = 0;
+      video.load();
     });
   });
 </script>
